@@ -1,0 +1,39 @@
+# Ambientes virtuais e caches Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Segredos e variáveis locais
+.env
+.env.local
+
+# Modelos de IA baixados automaticamente (muito grandes para o GitHub)
+models/kokoro/*.onnx
+models/kokoro/*.bin
+models/kokoro/*.part
+models/piper/*.onnx
+models/piper/*.json
+models/whisper/*
+!models/README.md
+
+# Projetos gerados, vídeos, temporários e logs (salvos localmente ou no Google Drive)
+projects/
+temp/
+logs/
+
+# Áudios instrumentais/SFX sintetizados automaticamente na inicialização
+assets/music/*.wav
+assets/sounds/*.wav
+
+# Arquivos de sistema / IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log

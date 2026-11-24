@@ -1,0 +1,111 @@
+{
+  "app_name": "Roblox AI Shorts Studio",
+  "version": "1.0.0",
+  "language": "pt-BR",
+  "ui": {
+    "host": "127.0.0.1",
+    "port": 7860,
+    "open_browser": true
+  },
+  "generation": {
+    "default_mode": "local_free",
+    "default_visual_style": "roblox_3d_blender_cinematic",
+    "flow_credits_available": false,
+    "flow_official_url": "https://labs.google/fx/tools/flow",
+    "gemini_web_url": "https://gemini.google.com",
+    "default_duration_seconds": 55,
+    "min_scenes": 6,
+    "max_scenes": 10,
+    "default_genre": "Suspense / Mistério",
+    "default_story_opening": "Neste servidor..."
+  },
+  "blender": {
+    "enabled": true,
+    "executable_path": "auto",
+    "roblox_story_kit_engine": "auto",
+    "render_engine": "auto",
+    "gpu_device": "auto",
+    "samples": 16,
+    "animation_fps": 15,
+    "render_width": 540,
+    "render_height": 960,
+    "reference_resolution": 768,
+    "timeout_seconds": 360
+  },
+  "story_ai": {
+    "provider": "auto",
+    "ollama_url": "http://127.0.0.1:11434",
+    "ollama_model": "gemma3:4b",
+    "gemini_model": "gemini-2.5-flash",
+    "timeout_seconds": 120,
+    "max_retries": 2
+  },
+  "comfyui": {
+    "enabled": true,
+    "base_url": "http://127.0.0.1:8188",
+    "timeout_seconds": 600,
+    "wan22_min_vram_gb": 12.0,
+    "local_image_min_vram_gb": 4.0,
+    "wan22_unet": "wan2.2_ti2v_5B_fp16.safetensors",
+    "wan22_clip": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "wan22_vae": "wan2.2_vae.safetensors",
+    "image_checkpoint": "sd_xl_base_1.0.safetensors",
+    "wan22_width": 480,
+    "wan22_height": 832,
+    "wan22_fps": 24,
+    "wan22_steps": 20,
+    "image_width": 768,
+    "image_height": 1344,
+    "image_steps": 22
+  },
+  "tts": {
+    "engine": "auto",
+    "default_voice": "pm_alex",
+    "default_speed": 1.05,
+    "kokoro_model_file": "models/kokoro/kokoro-v1.0.int8.onnx",
+    "kokoro_voices_file": "models/kokoro/voices-v1.0.bin",
+    "kokoro_model_url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.int8.onnx",
+    "kokoro_voices_url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin",
+    "piper_model_file": "models/piper/pt_BR-faber-medium.onnx",
+    "sample_rate": 24000
+  },
+  "subtitles": {
+    "engine": "faster-whisper",
+    "whisper_model": "base",
+    "whisper_compute_type": "int8",
+    "whisper_device": "auto",
+    "language": "pt",
+    "font_name": "Arial Black",
+    "font_size": 74,
+    "max_words_per_line": 4,
+    "margin_v": 340,
+    "highlight_color_ass": "&H0000D7FF&",
+    "primary_color_ass": "&H00FFFFFF&",
+    "outline_color_ass": "&H00000000&"
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "video_codec": "libx264",
+    "use_gpu_acceleration": true,
+    "cleanup_temp_work": true,
+    "crf": 20,
+    "preset": "medium",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "music_volume": 0.16,
+    "sfx_volume": 0.42,
+    "transition_duration": 0.35,
+    "ffmpeg_path": "auto"
+  },
+  "paths": {
+    "projects_dir": "projects",
+    "models_dir": "models",
+    "workflows_dir": "workflows/comfyui",
+    "assets_dir": "assets",
+    "logs_dir": "logs",
+    "temp_dir": "temp",
+    "drive_export_dir": ""
+  }
+}
