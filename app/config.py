@@ -31,6 +31,7 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
     },
     "blender": {
         "enabled": True,
+        "strict_3d_no_2d_fallback": True,
         "executable_path": "auto",
         "roblox_story_kit_engine": "auto",
         "render_engine": "auto",
@@ -40,7 +41,7 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
         "render_width": 540,
         "render_height": 960,
         "reference_resolution": 768,
-        "timeout_seconds": 360,
+        "timeout_seconds": 600,
     },
     "story_ai": {
         "provider": "auto",

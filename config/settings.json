@@ -21,6 +21,7 @@
   },
   "blender": {
     "enabled": true,
+    "strict_3d_no_2d_fallback": true,
     "executable_path": "auto",
     "roblox_story_kit_engine": "auto",
     "render_engine": "auto",
@@ -30,7 +31,7 @@
     "render_width": 540,
     "render_height": 960,
     "reference_resolution": 768,
-    "timeout_seconds": 360
+    "timeout_seconds": 600
   },
   "story_ai": {
     "provider": "auto",

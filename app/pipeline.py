@@ -258,6 +258,23 @@ class ProductionPipeline:
                         sc.status = "pending"
                         sc.video_path = None
 
+            # Se o Blender 3D está ativo e strict_3d_no_2d_fallback=True, substitui automaticamente
+            # quaisquer cenas antigas geradas no fallback 2D feio por renderização 3D REAL do Blender!
+            strict_3d = bool(self.settings.get("blender", {}).get("strict_3d_no_2d_fallback", True))
+            if strict_3d and hw.blender_available and self.settings.get("blender", {}).get("enabled", True):
+                upgraded_2d = []
+                for sc in storyboard.scenes:
+                    if sc.source_type == SceneSourceType.FALLBACK_PROCEDURAL_ANIMATED:
+                        sc.status = "pending"
+                        sc.video_path = None
+                        upgraded_2d.append(sc.scene_number)
+                if upgraded_2d:
+                    self.pm.append_log(
+                        state,
+                        f"Cenas antigas em 2D detectadas ({upgraded_2d}): marcadas para refazer em 3D REAL no Blender!",
+                    )
+                    self.pm.save_storyboard(project_id, storyboard)
+
             pending_scenes = [s for s in storyboard.scenes if not self.pm.is_scene_ready(s)]
 
             # Se modo Google Flow está ativo (Modo A ou Modo C com créditos disponíveis) e ainda faltam cenas:
@@ -418,8 +435,10 @@ class ProductionPipeline:
                     level="WARNING",
                 )
 
-        # Tier 2B: Renderização 3D REAL no Blender (EEVEE/Cycles) — sem ilustrações 2D chapadas!
-        if hw.blender_available and self.settings.get("blender", {}).get("enabled", True):
+        # Tier 2B: Renderização 3D REAL no Blender (EEVEE/Cycles/3D Keyframes) — NUNCA cai em 2D feio!
+        blender_cfg = self.settings.get("blender", {})
+        strict_3d = bool(blender_cfg.get("strict_3d_no_2d_fallback", True))
+        if hw.blender_available and blender_cfg.get("enabled", True):
             try:
                 render_scene_3d_blender(
                     scene=scene,
@@ -435,9 +454,14 @@ class ProductionPipeline:
             except Exception as exc:
                 self.pm.append_log(
                     state,
-                    f"Renderização 3D Blender falhou na cena {scene.scene_number:02d} ({exc}). Tentando alternativa local.",
-                    level="WARNING",
+                    f"Renderização 3D Blender falhou na cena {scene.scene_number:02d}: {exc}",
+                    level="ERROR" if strict_3d else "WARNING",
                 )
+                if strict_3d:
+                    raise RuntimeError(
+                        f"Modo 3D obrigatório ativo (sem fallback 2D): Blender 3D falhou na cena {scene.scene_number:02d}. "
+                        f"Detalhe: {exc}"
+                    ) from exc
 
         # Tier 3: ComfyUI imagem local (GPUs 4–11 GB VRAM) + animação FFmpeg
         generated_images: List[Path] = []

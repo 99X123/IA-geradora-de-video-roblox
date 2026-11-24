@@ -802,8 +802,17 @@ def render_scene_mode(spec: Dict[str, Any]) -> None:
 
     frames_dir = Path(spec["frames_dir"])
     frames_dir.mkdir(parents=True, exist_ok=True)
-    bpy.context.scene.render.filepath = str(frames_dir / "frame_")
-    bpy.ops.render.render(animation=True)
+    if spec.get("mode") == "keyframes":
+        key_count = max(2, min(5, int(spec.get("keyframe_count", 3))))
+        span = max(1, frame_end - frame_start)
+        for idx_k in range(key_count):
+            kf = int(round(frame_start + span * (idx_k / max(1, key_count - 1))))
+            bpy.context.scene.frame_set(kf)
+            bpy.context.scene.render.filepath = str(frames_dir / f"keyframe_{idx_k + 1:02d}.png")
+            bpy.ops.render.render(write_still=True)
+    else:
+        bpy.context.scene.render.filepath = str(frames_dir / "frame_")
+        bpy.ops.render.render(animation=True)
 
 
 def main() -> None:

@@ -120,10 +120,12 @@ def _setup_set_and_lighting(
         W.sun(strength=3.8, rot=(46, 0, 32))
 
     W.town(school=True, seed=seed)
-    W.cloud_field("clouds", (0, 20, 48), spread=(140, 100, 16), n=16, seed=seed)
+    W.cloud_field("clouds", (0, 20, 48), spread=(120, 90, 14), n=6, seed=seed)
     # Adiciona carro 3D colorido na rua para profundidade cinematográfica
     W.car("street_car_1", (-11.0, -26.5, 0.0), color="#d9453a", rot=90)
     W.car("street_car_2", (14.5, -33.5, 0.0), color="#2563eb", rot=-90)
+    # Luz frontal suave nos personagens para rostos e cores sempre nítidos como na ficha 3D
+    core.light("HeroFrontFill", "AREA", (0.0, -39.0, 5.5), 2600, (1.0, 0.97, 0.94), 7, target=(0, -30, 3.2))
 
     # Personagens posicionados na avenida ampla em frente à escola 3D (z=0, y=-30)
     return (-1.2, -30.0, 0.0), (2.6, -26.2, 0.0), 0.0
@@ -165,11 +167,13 @@ def _apply_engine_and_gpu(spec: Dict[str, Any]) -> None:
                 pass
         if not used_gpu:
             scene.cycles.device = "CPU"
+            # Em CPU desativa compositor pesado por frame para ganhar ~3x de velocidade mantendo PBR + AgX
+            scene.render.use_compositing = False
         scene.cycles.samples = max(4, samples)
         scene.cycles.use_denoising = True
         try:
             scene.cycles.use_adaptive_sampling = True
-            scene.cycles.adaptive_threshold = 0.08 if used_gpu else 0.12
+            scene.cycles.adaptive_threshold = 0.08 if used_gpu else 0.10
             scene.cycles.max_bounces = 2
             scene.cycles.diffuse_bounces = 1
             scene.cycles.glossy_bounces = 1
@@ -335,8 +339,23 @@ def render_scene_rbx(spec: Dict[str, Any]) -> None:
 
     frames_dir = Path(spec["frames_dir"])
     frames_dir.mkdir(parents=True, exist_ok=True)
-    bpy.context.scene.render.filepath = str(frames_dir / "frame_")
-    bpy.ops.render.render(animation=True)
+
+    if spec.get("mode") == "keyframes":
+        # Renderiza 3 keyframes 3D reais (início, meio e ápice da ação) — ultra-rápido mesmo sem GPU,
+        # mantendo 100% dos personagens 3D rbx, rostos expressivos e cenários 3D reais!
+        key_count = max(2, min(5, int(spec.get("keyframe_count", 3))))
+        span = max(1, f1 - f0)
+        key_frames = [
+            int(round(f0 + span * (i / max(1, key_count - 1))))
+            for i in range(key_count)
+        ]
+        for idx_k, kf in enumerate(key_frames, start=1):
+            bpy.context.scene.frame_set(kf)
+            bpy.context.scene.render.filepath = str(frames_dir / f"keyframe_{idx_k:02d}.png")
+            bpy.ops.render.render(write_still=True)
+    else:
+        bpy.context.scene.render.filepath = str(frames_dir / "frame_")
+        bpy.ops.render.render(animation=True)
 
 
 def main() -> None:

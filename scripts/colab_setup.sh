@@ -17,6 +17,9 @@ apt-get install -y -qq \
   libsm6 \
   libegl1 \
   libgl1 \
+  libgl1-mesa-dri \
+  libvulkan1 \
+  xvfb \
   xz-utils \
   curl >/dev/null
 
