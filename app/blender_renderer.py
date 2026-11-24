@@ -35,12 +35,33 @@ def get_rbx_engine_dir(settings: Optional[Dict[str, Any]] = None) -> Optional[Pa
     return None
 
 
+def _has_nvidia_gpu() -> bool:
+    """Detecta rapidamente se existe uma GPU NVIDIA CUDA disponível (ex.: T4/L4/A100 no Colab)."""
+    for smi in ("nvidia-smi", "/usr/bin/nvidia-smi", "/usr/local/nvidia/bin/nvidia-smi"):
+        try:
+            out = subprocess.check_output(
+                [smi, "--query-gpu=name,memory.total", "--format=csv,noheader,nounits"],
+                text=True,
+                timeout=4,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+            if out:
+                parts = [p.strip() for p in out.splitlines()[0].split(",")]
+                vram_mb = float(parts[1]) if len(parts) > 1 else 0.0
+                if vram_mb >= 3500:
+                    return True
+        except Exception:
+            continue
+    return False
+
+
 def resolve_blender_render_engine(cfg: Dict[str, Any]) -> str:
     """
     Escolhe o motor ideal do Blender conforme o ambiente:
-    - Linux headless (ex.: Google Colab sem DISPLAY): usa CYCLES (CUDA/OptiX na GPU ou CPU denoised),
-      evitando falhas de OpenGL/X11 no EEVEE headless.
-    - Windows / Desktop com tela: usa BLENDER_EEVEE (muito rápido).
+    - GPU NVIDIA no Colab/Linux headless: tenta BLENDER_EEVEE (EGL super rápido ~5-10s/cena)
+      com fallback automático para CYCLES CUDA/OptiX GPU caso EGL não abra.
+    - Linux headless SEM GPU (Colab CPU): usa CYCLES CPU ultra-otimizado com denoiser.
+    - Windows / Desktop com tela: usa BLENDER_EEVEE.
     """
     bcfg = cfg.get("blender", {})
     requested = str(bcfg.get("render_engine", "auto") or "auto").strip()
@@ -49,8 +70,37 @@ def resolve_blender_render_engine(cfg: Dict[str, Any]) -> str:
 
     is_headless_linux = platform.system() == "Linux" and not os.environ.get("DISPLAY")
     if is_headless_linux:
-        return "CYCLES"
+        return "BLENDER_EEVEE" if _has_nvidia_gpu() else "CYCLES"
     return "BLENDER_EEVEE"
+
+
+def _effective_blender_profile(cfg: Dict[str, Any], render_engine: str) -> Dict[str, int | bool]:
+    """Ajusta resolução, FPS e samples automaticamente para velocidade máxima na GPU ou CPU."""
+    bcfg = cfg.get("blender", {})
+    has_gpu = _has_nvidia_gpu()
+    is_headless_linux = platform.system() == "Linux" and not os.environ.get("DISPLAY")
+
+    width = int(bcfg.get("render_width", 540))
+    height = int(bcfg.get("render_height", 960))
+    fps = int(bcfg.get("animation_fps", 15))
+    samples = int(bcfg.get("samples", 16))
+
+    # Modo CPU-only no Colab/Linux (2 threads): reduz carga em ~12x mantendo boa nitidez após upscale Lanczos
+    if is_headless_linux and not has_gpu and render_engine.upper() == "CYCLES":
+        width = min(width, 360)
+        height = min(height, 640)
+        fps = min(fps, 10)
+        samples = min(samples, 4)
+    elif has_gpu and render_engine.upper() == "CYCLES":
+        samples = min(samples, 12)
+
+    return {
+        "has_gpu": has_gpu,
+        "width": width,
+        "height": height,
+        "fps": fps,
+        "samples": samples,
+    }
 
 
 def _run_blender_with_fallback(
@@ -74,9 +124,14 @@ def _run_blender_with_fallback(
 
     current_engine = str(spec.get("engine", "")).upper()
     if current_engine != "CYCLES":
+        has_gpu = bool(spec.get("has_gpu", False))
         spec_retry = dict(spec)
         spec_retry["engine"] = "CYCLES"
-        spec_retry["samples"] = min(int(spec.get("samples", 16)), 16)
+        spec_retry["samples"] = 12 if has_gpu else 4
+        if not has_gpu and "width" in spec_retry and "height" in spec_retry:
+            spec_retry["width"] = min(int(spec_retry["width"]), 360)
+            spec_retry["height"] = min(int(spec_retry["height"]), 640)
+            spec_retry["fps"] = min(int(spec_retry.get("fps", 15)), 10)
         spec_path.write_text(json.dumps(spec_retry, indent=2, ensure_ascii=False), encoding="utf-8")
         proc_retry = subprocess.run(
             [blender_exe, "--background", "--factory-startup", "--python", str(script_to_run), "--", str(spec_path)],
@@ -115,16 +170,18 @@ def render_character_reference_3d(
     rbx_dir = get_rbx_engine_dir(cfg)
     script_to_run = RBX_BRIDGE_SCRIPT if rbx_dir else BLENDER_SCRIPT
     render_engine = resolve_blender_render_engine(cfg)
+    prof = _effective_blender_profile(cfg, render_engine)
 
     spec = {
         "mode": "reference",
         "rbx_engine_dir": str(rbx_dir) if rbx_dir else None,
         "character": character.model_dump(mode="json"),
         "output_path": str(dest_png),
-        "resolution": int(bcfg.get("reference_resolution", 768)),
+        "resolution": min(int(bcfg.get("reference_resolution", 768)), 512 if (not prof["has_gpu"] and render_engine == "CYCLES") else 768),
         "engine": render_engine,
+        "has_gpu": bool(prof["has_gpu"]),
         "gpu_device": str(bcfg.get("gpu_device", "auto")),
-        "samples": int(bcfg.get("samples", 16)),
+        "samples": int(prof["samples"]),
         "roughness_bias": preset.blender_roughness_bias,
         "color_look": preset.blender_color_look,
     }
@@ -186,8 +243,9 @@ def render_scene_3d_blender(
     rbx_dir = get_rbx_engine_dir(cfg)
     script_to_run = RBX_BRIDGE_SCRIPT if rbx_dir else BLENDER_SCRIPT
     render_engine = resolve_blender_render_engine(cfg)
+    prof = _effective_blender_profile(cfg, render_engine)
 
-    anim_fps = int(bcfg.get("animation_fps", 15))
+    anim_fps = int(prof["fps"])
     spec_path = work_dir / "scene_spec.json"
     spec = {
         "mode": "scene",
@@ -201,12 +259,13 @@ def render_scene_3d_blender(
         "duration_seconds": float(scene.duration_seconds),
         "characters": scene_chars,
         "frames_dir": str(frames_dir),
-        "width": int(bcfg.get("render_width", 540)),
-        "height": int(bcfg.get("render_height", 960)),
+        "width": int(prof["width"]),
+        "height": int(prof["height"]),
         "fps": anim_fps,
         "engine": render_engine,
+        "has_gpu": bool(prof["has_gpu"]),
         "gpu_device": str(bcfg.get("gpu_device", "auto")),
-        "samples": int(bcfg.get("samples", 16)),
+        "samples": int(prof["samples"]),
         "roughness_bias": preset.blender_roughness_bias,
         "color_look": preset.blender_color_look,
         "seed": scene.scene_number * 131 + (hash(storyboard.project_id) % 997),

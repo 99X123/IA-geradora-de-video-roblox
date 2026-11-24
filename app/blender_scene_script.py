@@ -655,17 +655,18 @@ def configure_render_settings(
 
     if scene.render.engine == "CYCLES":
         using_gpu = _enable_cycles_gpu(scene, gpu_device=gpu_device)
-        scene.cycles.samples = max(12 if using_gpu else 8, samples)
+        scene.cycles.samples = max(4, samples)
         scene.cycles.use_denoising = True
         try:
             scene.cycles.use_adaptive_sampling = True
-            scene.cycles.adaptive_threshold = 0.05
-            scene.cycles.max_bounces = 4
-            scene.cycles.diffuse_bounces = 2
-            scene.cycles.glossy_bounces = 2
-            scene.cycles.transmission_bounces = 2
-            scene.cycles.transparent_max_bounces = 4
-            scene.cycles.sample_clamp_indirect = 5.0
+            scene.cycles.adaptive_threshold = 0.08 if using_gpu else 0.12
+            scene.cycles.max_bounces = 2
+            scene.cycles.diffuse_bounces = 1
+            scene.cycles.glossy_bounces = 1
+            scene.cycles.transmission_bounces = 1
+            scene.cycles.volume_bounces = 0
+            scene.cycles.transparent_max_bounces = 3
+            scene.cycles.sample_clamp_indirect = 4.0
         except Exception:
             pass
     else:

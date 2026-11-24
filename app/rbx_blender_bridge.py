@@ -165,14 +165,18 @@ def _apply_engine_and_gpu(spec: Dict[str, Any]) -> None:
                 pass
         if not used_gpu:
             scene.cycles.device = "CPU"
-        scene.cycles.samples = max(12 if used_gpu else 8, samples)
+        scene.cycles.samples = max(4, samples)
         scene.cycles.use_denoising = True
         try:
             scene.cycles.use_adaptive_sampling = True
-            scene.cycles.adaptive_threshold = 0.05
-            scene.cycles.max_bounces = 4
-            scene.cycles.diffuse_bounces = 2
-            scene.cycles.glossy_bounces = 2
+            scene.cycles.adaptive_threshold = 0.08 if used_gpu else 0.12
+            scene.cycles.max_bounces = 2
+            scene.cycles.diffuse_bounces = 1
+            scene.cycles.glossy_bounces = 1
+            scene.cycles.transmission_bounces = 1
+            scene.cycles.volume_bounces = 0
+            scene.cycles.transparent_max_bounces = 3
+            scene.cycles.sample_clamp_indirect = 4.0
         except Exception:
             pass
     else:
@@ -224,9 +228,9 @@ def render_scene_rbx(spec: Dict[str, Any]) -> None:
 
     core.setup_render(f0, f1, res=(width, height), samples=int(spec.get("samples", 16)), pct=100, blur=False)
     _apply_engine_and_gpu(spec)
-    # Renderiza 15 fps efetivos (frame_step=2 sobre timeline de 30 fps) -> 2x mais rápido preservando toda animação!
+    # Renderiza 10 ou 15 fps efetivos (frame_step=3 ou 2 sobre timeline de 30 fps) -> muito mais rápido!
     target_fps = int(spec.get("fps", 15))
-    bpy.context.scene.frame_step = 2 if target_fps <= 15 else 1
+    bpy.context.scene.frame_step = 3 if target_fps <= 10 else (2 if target_fps <= 15 else 1)
 
     seed = int(spec.get("seed", 42))
     random.seed(seed)

@@ -56,28 +56,39 @@ def _detect_cpu_name() -> str:
 
 def _detect_gpu() -> Tuple[str, str, float, bool]:
     """Retorna (gpu_name, gpu_vendor, vram_gb, cuda_available)."""
-    # 1. Tenta nvidia-smi (mais preciso para GPUs NVIDIA modernas com CUDA)
+    # 1. Tenta nvidia-smi no PATH e em caminhos padrão do Linux/Google Colab
+    nvidia_smi_bins = ["nvidia-smi", "/usr/bin/nvidia-smi", "/usr/local/nvidia/bin/nvidia-smi"]
+    for smi in nvidia_smi_bins:
+        try:
+            out = subprocess.check_output(
+                [
+                    smi,
+                    "--query-gpu=name,memory.total",
+                    "--format=csv,noheader,nounits",
+                ],
+                text=True,
+                timeout=5,
+                stderr=subprocess.DEVNULL,
+            ).strip()
+            if out:
+                line = out.splitlines()[0]
+                parts = [p.strip() for p in line.split(",")]
+                name = parts[0]
+                vram_mb = float(parts[1]) if len(parts) > 1 else 0.0
+                vram_gb = round(vram_mb / 1024.0, 2)
+                # GPUs muito antigas (ex.: GT 710/Kepler) não suportam PyTorch CUDA moderno
+                legacy_tokens = ("GT 710", "GT 720", "GT 730", "GT 610", "GTX 650", "GTX 660")
+                cuda_ok = not any(tok in name.upper() for tok in legacy_tokens) and vram_gb >= 4.0
+                return name, "NVIDIA", vram_gb, cuda_ok
+        except Exception:
+            continue
+
+    # 1B. Fallback CUDA via ctranslate2 / torch (caso nvidia-smi não esteja acessível no PATH)
     try:
-        out = subprocess.check_output(
-            [
-                "nvidia-smi",
-                "--query-gpu=name,memory.total",
-                "--format=csv,noheader,nounits",
-            ],
-            text=True,
-            timeout=5,
-            stderr=subprocess.DEVNULL,
-        ).strip()
-        if out:
-            line = out.splitlines()[0]
-            parts = [p.strip() for p in line.split(",")]
-            name = parts[0]
-            vram_mb = float(parts[1]) if len(parts) > 1 else 0.0
-            vram_gb = round(vram_mb / 1024.0, 2)
-            # GPUs muito antigas (ex.: GT 710/Kepler) não suportam PyTorch CUDA moderno
-            legacy_tokens = ("GT 710", "GT 720", "GT 730", "GT 610", "GTX 650", "GTX 660")
-            cuda_ok = not any(tok in name.upper() for tok in legacy_tokens) and vram_gb >= 4.0
-            return name, "NVIDIA", vram_gb, cuda_ok
+        import ctranslate2  # type: ignore
+
+        if ctranslate2.get_cuda_device_count() > 0:
+            return "NVIDIA CUDA GPU (Colab/Linux)", "NVIDIA", 15.0, True
     except Exception:
         pass
 
@@ -227,6 +238,12 @@ def detect_hardware(settings: Dict[str, Any] | None = None) -> HardwareReport:
         recommended_ollama_model = "gemma3:1b"
 
     warnings: List[str] = []
+    if is_colab_environment() and not cuda_available:
+        warnings.append(
+            "GPU T4 NÃO ATIVADA NO GOOGLE COLAB! Você está no modo CPU (2 threads), que é muito mais lento. "
+            "No menu do Colab vá em: Ambiente de execução → Alterar o tipo de ambiente de execução → GPU T4 → Salvar, "
+            "e rode as células novamente para renderizar 10x mais rápido!"
+        )
     if not supports_wan22:
         warnings.append(
             f"GPU detectada ({gpu_name}, {gpu_vram_gb:.1f} GB VRAM) não atende ao mínimo de "

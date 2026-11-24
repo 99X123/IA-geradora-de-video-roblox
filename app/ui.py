@@ -643,15 +643,28 @@ def build_ui() -> gr.Blocks:
 
     drive_dir = get_drive_export_dir(cfg)
     colab_mode = is_colab_environment()
+    hw_initial = detect_hardware(cfg)
     drive_badge_html = (
         f'<span class="studio-badge" style="margin-left:8px;">☁️ Google Drive ativo: {drive_dir}</span>'
         if drive_dir
         else (
-            '<span class="studio-badge" style="margin-left:8px;">☁️ Google Colab GPU ativo</span>'
+            '<span class="studio-badge" style="margin-left:8px;">☁️ Google Colab ativo</span>'
             if colab_mode
             else ""
         )
     )
+    colab_gpu_badge_html = ""
+    if colab_mode:
+        if hw_initial.cuda_available:
+            colab_gpu_badge_html = (
+                f'<span class="studio-badge" style="margin-left:8px;background:rgba(34,197,94,0.28);border-color:#4ade80;color:#dcfce7;">'
+                f'⚡ GPU Ativa: {hw_initial.gpu_name} ({hw_initial.gpu_vram_gb:.0f} GB VRAM)</span>'
+            )
+        else:
+            colab_gpu_badge_html = (
+                '<span class="studio-badge" style="margin-left:8px;background:rgba(220,38,38,0.35);border-color:#f87171;color:#fee2e2;">'
+                '⚠️ Colab SEM GPU (CPU lenta!) — Ative GPU T4 em Ambiente de execução → Alterar tipo</span>'
+            )
 
     with gr.Blocks(title="ROBLOX AI SHORTS STUDIO") as demo:
         gr.HTML(
@@ -661,6 +674,7 @@ def build_ui() -> gr.Blocks:
               <p>Fábrica automatizada de vídeos verticais 9:16 de histórias de Roblox para YouTube Shorts e TikTok — Google Flow + 100% Gratuito Local</p>
               <span class="studio-badge">R$ 0 em APIs obrigatórias • Troca Automática Flow → Local • Português Brasileiro</span>
               {drive_badge_html}
+              {colab_gpu_badge_html}
             </div>
             """
         )
