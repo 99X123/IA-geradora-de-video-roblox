@@ -387,3 +387,12 @@ def test_08_colab_env_overrides_and_drive_export(tmp_path: Path, monkeypatch: py
     assert copied.parent == export_dir
     assert copied.with_suffix(".srt").exists()
     assert (export_dir / f"{copied.stem}_post.txt").exists()
+
+    # Garante que cache do Whisper em /content/drive (FUSE sem symlinks) redireciona para disco local
+    # e que arquivos model.bin corrompidos ("../../blobs/...", erro CTranslate2 v774843950) sao detectados.
+    from app.subtitle_engine import WhisperSubtitleEngine
+
+    assert WhisperSubtitleEngine._is_google_drive_fuse(Path("/content/drive/MyDrive/RobloxAIShortsStudio/models/whisper"))
+    broken_bin = tmp_path / "broken_model.bin"
+    broken_bin.write_bytes(b"../../blobs/abcdef1234567890" + b"\x00" * 100)
+    assert WhisperSubtitleEngine._is_valid_model_bin(broken_bin) is False

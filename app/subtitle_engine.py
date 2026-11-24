@@ -8,6 +8,7 @@ import os
 import platform
 import shutil
 import subprocess
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -72,9 +73,55 @@ class WhisperSubtitleEngine:
 
     def __init__(self, settings: Optional[Dict[str, Any]] = None) -> None:
         self.settings = settings or load_settings()
-        self.models_dir = resolve_path(self.settings["paths"]["models_dir"]) / "whisper"
+        configured_dir = resolve_path(self.settings["paths"]["models_dir"]) / "whisper"
+        # Google Drive FUSE (/content/drive) nao suporta symlinks do HuggingFace Hub,
+        # fazendo model.bin virar texto "../../blobs/..." (erro CTranslate2 binary version v774843950).
+        # No Colab, usamos o SSD local rapido para o cache do Whisper (baixa ~145 MB em ~2s sem corromper).
+        if self._is_google_drive_fuse(configured_dir):
+            self.models_dir = Path(tempfile.gettempdir()) / "roblox_ai_shorts_whisper_cache"
+        else:
+            self.models_dir = configured_dir
         self.models_dir.mkdir(parents=True, exist_ok=True)
         self._model_cache: Dict[str, Any] = {}
+
+    @staticmethod
+    def _is_google_drive_fuse(path: Path) -> bool:
+        norm = path.as_posix().lower()
+        return norm.startswith("/content/drive/") or "/gdrive/" in norm
+
+    @staticmethod
+    def _is_valid_model_bin(bin_file: Path) -> bool:
+        """Verifica se model.bin é um binário CTranslate2 válido (e não um symlink quebrado '../../blobs/...')."""
+        try:
+            if not bin_file.exists() or bin_file.stat().st_size < 1_000_000:
+                return False
+            with bin_file.open("rb") as fh:
+                head = fh.read(16)
+            # Symlink gravado como texto puro no Drive FUSE ou ponteiro Git LFS
+            if head.startswith((b"../", b"..\\", b"version https://")):
+                return False
+            # Versão binária CTranslate2 (uint32 little-endian) deve ser razoável (1..100)
+            if len(head) >= 4:
+                ver = int.from_bytes(head[:4], byteorder="little", signed=False)
+                if ver == 0 or ver > 100:
+                    return False
+            return True
+        except Exception:
+            return False
+
+    def _purge_corrupted_whisper_cache(self) -> None:
+        """Remove caches corrompidos de model.bin para forçar um download limpo."""
+        if not self.models_dir.exists():
+            return
+        for bin_file in list(self.models_dir.rglob("model.bin")):
+            if not self._is_valid_model_bin(bin_file):
+                # Remove a pasta inteira do modelo HuggingFace corrompido (models--Systran--*)
+                target = bin_file.parent
+                while target.parent != self.models_dir and target != self.models_dir:
+                    if target.name.startswith("models--"):
+                        break
+                    target = target.parent
+                shutil.rmtree(target, ignore_errors=True)
 
     def is_model_cached(self, model_size: Optional[str] = None) -> bool:
         size = model_size or self.settings["subtitles"].get("whisper_model", "base")
@@ -82,7 +129,8 @@ class WhisperSubtitleEngine:
             return False
         for bin_file in self.models_dir.rglob("model.bin"):
             if size in str(bin_file.parent).lower() or size in str(bin_file.parent.parent).lower():
-                return True
+                if self._is_valid_model_bin(bin_file):
+                    return True
         return False
 
     @staticmethod
@@ -102,6 +150,8 @@ class WhisperSubtitleEngine:
     def _load_model(self, model_size: Optional[str] = None, local_files_only: bool = False) -> Any:
         from faster_whisper import WhisperModel  # type: ignore
 
+        self._purge_corrupted_whisper_cache()
+
         size = model_size or self.settings["subtitles"].get("whisper_model", "base")
         compute_cfg = self.settings["subtitles"].get("whisper_compute_type", "int8")
         device_cfg = self.settings["subtitles"].get("whisper_device", "auto")
@@ -111,30 +161,41 @@ class WhisperSubtitleEngine:
         if cache_key in self._model_cache:
             return self._model_cache[cache_key]
 
-        try:
-            model = WhisperModel(
+        def _instantiate(dev: str, ctype: str, root_dir: Path, local_only: bool) -> Any:
+            return WhisperModel(
                 size,
-                device=device,
-                compute_type=compute_type,
-                download_root=str(self.models_dir),
-                local_files_only=local_files_only,
-            )
-        except Exception:
-            if device == "cpu":
-                raise
-            # Fallback seguro se CUDA/cuDNN estiver indisponível no container
-            device, compute_type = "cpu", "int8"
-            cache_key = f"{size}:{device}:{compute_type}:{local_files_only}"
-            if cache_key in self._model_cache:
-                return self._model_cache[cache_key]
-            model = WhisperModel(
-                size,
-                device=device,
-                compute_type=compute_type,
-                download_root=str(self.models_dir),
-                local_files_only=local_files_only,
+                device=dev,
+                compute_type=ctype,
+                download_root=str(root_dir),
+                local_files_only=local_only,
             )
 
+        try:
+            model = _instantiate(device, compute_type, self.models_dir, local_files_only)
+        except Exception as exc:
+            err_msg = str(exc).lower()
+            # Recuperação automática se o cache tiver sido corrompido (ex.: symlink quebrado / binary version inválida)
+            if ("binary version" in err_msg or "failed to open" in err_msg or "corrupt" in err_msg) and not local_files_only:
+                logger.warning("Cache Whisper corrompido detectado (%s). Recriando em pasta local limpa...", exc)
+                self.models_dir = Path(tempfile.gettempdir()) / "roblox_ai_shorts_whisper_cache"
+                shutil.rmtree(self.models_dir, ignore_errors=True)
+                self.models_dir.mkdir(parents=True, exist_ok=True)
+                try:
+                    model = _instantiate(device, compute_type, self.models_dir, False)
+                except Exception:
+                    device, compute_type = "cpu", "int8"
+                    model = _instantiate(device, compute_type, self.models_dir, False)
+            elif device != "cpu":
+                # Fallback seguro se CUDA/cuDNN estiver indisponível no container
+                device, compute_type = "cpu", "int8"
+                cache_key = f"{size}:{device}:{compute_type}:{local_files_only}"
+                if cache_key in self._model_cache:
+                    return self._model_cache[cache_key]
+                model = _instantiate(device, compute_type, self.models_dir, local_files_only)
+            else:
+                raise
+
+        cache_key = f"{size}:{device}:{compute_type}:{local_files_only}"
         self._model_cache[cache_key] = model
         return model
 

@@ -200,8 +200,9 @@ def detect_hardware(settings: Dict[str, Any] | None = None) -> HardwareReport:
     piper_model = resolve_path(cfg["tts"]["piper_model_file"])
     piper_ready = piper_model.exists()
 
-    whisper_dir = resolve_path(cfg["paths"]["models_dir"]) / "whisper"
-    whisper_ready = whisper_dir.exists() and any(whisper_dir.rglob("model.bin"))
+    from app.subtitle_engine import WhisperSubtitleEngine
+
+    whisper_ready = WhisperSubtitleEngine(cfg).is_model_cached()
 
     wan22_min_vram = float(cfg["comfyui"].get("wan22_min_vram_gb", 12.0))
     img_min_vram = float(cfg["comfyui"].get("local_image_min_vram_gb", 4.0))
