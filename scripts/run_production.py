@@ -18,7 +18,10 @@ from src.video_orchestrator import VideoOrchestrator
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="AutoShorts AI — Fábrica Automatizada de Vídeos 3D Verticais")
-    parser.add_argument("--theme", required=True, help="Tema ou ideia do vídeo curto")
+    parser.add_argument("--theme", required=True, help="Tema ou título do vídeo curto")
+    parser.add_argument("--script-file", default=None, help="Arquivo .txt com o SEU roteiro próprio (ex.: linhas N: / C:)")
+    parser.add_argument("--script-text", default=None, help="Texto do SEU roteiro próprio diretamente pela linha de comando")
+    parser.add_argument("--costar-rig", choices=["auto", "bot", "pigeon", "phantom", "rock", "human", "mech"], default="auto")
     parser.add_argument("--duration", type=float, default=None, help="Duração desejada em segundos (padrão: 60)")
     parser.add_argument("--quality", choices=["draft", "preview", "production", "ultra"], default=None)
     parser.add_argument("--tts-provider", default=None, help="auto | edge_tts | google_cloud | openai | local_synth_test")
@@ -43,6 +46,10 @@ def main() -> int:
     if args.duration:
         overrides["video"]["target_duration_sec"] = args.duration
 
+    custom_script = args.script_text
+    if args.script_file:
+        custom_script = Path(args.script_file).read_text(encoding="utf-8")
+
     cfg = AutoShortsConfig.load(overrides=overrides)
     orch = VideoOrchestrator(config=cfg, work_root=args.work_root)
     result = orch.produce(
@@ -51,6 +58,8 @@ def main() -> int:
         duration_sec=args.duration,
         tts_provider=args.tts_provider,
         story_provider=args.story_provider,
+        custom_script=custom_script,
+        costar_rig=args.costar_rig,
         require_storyboard_approval=args.pause_storyboard,
         approved=args.approved,
         enable_drive_sync=args.drive_sync,

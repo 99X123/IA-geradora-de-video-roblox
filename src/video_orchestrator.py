@@ -99,6 +99,8 @@ class VideoOrchestrator:
         duration_sec: Optional[float] = None,
         tts_provider: Optional[str] = None,
         story_provider: Optional[str] = None,
+        custom_script: Optional[str] = None,
+        costar_rig: Optional[str] = None,
         require_storyboard_approval: Optional[bool] = None,
         approved: bool = False,
         enable_drive_sync: Optional[bool] = None,
@@ -129,9 +131,9 @@ class VideoOrchestrator:
             if env_probe["warning"]:
                 logger.warning(env_probe["warning"])
 
-            # 2. Story & Characters Generation (resume if already present)
+            # 2. Story & Characters Generation (or exact user-provided custom script)
             story_path = proj_dir / "story.json"
-            if story_path.exists():
+            if story_path.exists() and not (custom_script and custom_script.strip()):
                 story = json.loads(story_path.read_text(encoding="utf-8"))
                 logger.info("Reaproveitando roteiro existente em cache: %s", story_path)
             else:
@@ -141,6 +143,8 @@ class VideoOrchestrator:
                     duration_sec=duration_sec,
                     provider=story_provider,
                     output_path=story_path,
+                    custom_script=custom_script,
+                    costar_rig=costar_rig,
                 )
             script_pairs_path = proj_dir / "script.json"
             script_pairs_path.write_text(
