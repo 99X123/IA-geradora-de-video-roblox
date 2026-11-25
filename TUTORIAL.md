@@ -50,15 +50,26 @@ Execute as células em ordem:
 
 ---
 
-## Parte 4 — Criar seu vídeo apenas digitando o tema
+## Parte 4 — Colocar o SEU PRÓPRIO ROTEIRO (ou gerar pelo tema)
 
-1. **Célula 6 — Configuração Central:**
-   - Digite o **`TEMA`** (ex.: `"um pombo virou síndico do meu prédio"`).
-   - Cole em **`MODELO_OPENCODE`** um dos modelos listados na Célula 5 (ex.: `google/gemini-3-flash-preview` ou `opencode/big-pickle`), ou deixe vazio para usar o gerador local PT-BR.
+1. **Célula 6A — Escreva o SEU PRÓPRIO ROTEIRO certinho:**
+   - Deixe `USAR_MEU_ROTEIRO = True`.
+   - Escolha o `TITULO_DO_VIDEO` e o `PERSONAGEM_COSTAR` (`bot`, `pigeon`, `phantom`, `rock`, `human`, `mech` ou `auto`).
+   - Cole suas falas dentro de `MEU_ROTEIRO`, uma por linha:
+     ```text
+     [sala] N: Eu só queria dormir cedo hoje, até meu robô aparecer com uma panela gigante.
+     [cozinha] C: Calma Leo! Isso aqui vai virar o melhor brigadeiro da galáxia.
+     [praca] S: Ei, por que tem fumaça brilhante saindo da sua janela?
+     [sala_noite] N: Alguém sabe como mudar de planeta antes de segunda-feira?
+     ```
+   - `N:` = Narrador (voz 1), `C:` = Co-protagonista (voz 2), `S:` = 3º personagem opcional (voz 3).
+   - Os cenários entre colchetes (`[sala]`, `[sala_noite]`, `[cozinha]`, `[corredor]`, `[praca]`, `[praca_dourada]`, `[praca_caos]`, `[estudio]`) são opcionais — se não colocar, o sistema escolhe automaticamente pelas palavras da frase!
+   - *(Se quiser que a IA invente a história sozinha, basta desmarcar `USAR_MEU_ROTEIRO`.)*
+2. **Célula 6B — Configuração de Vídeo, Voz e Qualidade:**
    - `PROVEDOR_TTS` já vem em **`edge_tts`** (vozes neurais brasileiras naturais sem API key e sem login).
    - Escolha `QUALIDADE`: `draft` (rápido para testar) ou `production` (`1080×1920 @ 30fps`).
-2. **Célula 7 — Produzir Vídeo Completo:**
-   - Gera história, vozes PT-BR, alinhamento palavra por palavra, legendas, storyboard 3D, SFX + música original, renderiza o MP4 em partes no disco rápido do Colab, passa no controle de qualidade e salva o vídeo pronto automaticamente em:
+3. **Célula 7 — Produzir Vídeo Completo:**
+   - Gera vozes PT-BR para o seu roteiro exato, alinhamento palavra por palavra, legendas, storyboard 3D, SFX + música original, renderiza o MP4 em partes no disco rápido do Colab, passa no controle de qualidade e salva o vídeo pronto automaticamente em:
      `Meu Drive/AutoShorts AI/Videos/`
 
 ---

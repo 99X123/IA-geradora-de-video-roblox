@@ -165,6 +165,11 @@ class OpenCodeReviewer:
             "stderr": redact_secrets(proc.stderr[-4000:]),
         }
 
+    def _supported_run_flags(self, executable: str) -> set[str]:
+        proc = run_subprocess([executable, "run", "--help"], check=False, timeout=15)
+        help_txt = f"{proc.stdout}\n{proc.stderr}"
+        return {fl for fl in ("--standalone", "--archived", "--format", "--auto", "--file") if fl in help_txt}
+
     def _invoke_opencode(
         self,
         executable: str,
@@ -175,20 +180,20 @@ class OpenCodeReviewer:
     ) -> Dict[str, Any]:
         # Collapse newlines into spaces so Windows `.cmd` wrappers never truncate the CLI prompt
         single_line_prompt = " ".join(line.strip() for line in prompt.splitlines() if line.strip())
-        cmd = [
-            executable,
-            "run",
-            "--standalone",
-            "--model",
-            model,
-            "--archived",
-            "--format",
-            "default",
-        ]
-        if allow_edits and self.auto_approve:
+        supported = self._supported_run_flags(executable)
+        cmd = [executable, "run"]
+        if "--standalone" in supported:
+            cmd.append("--standalone")
+        cmd.extend(["--model", model])
+        if "--archived" in supported:
+            cmd.append("--archived")
+        if "--format" in supported:
+            cmd.extend(["--format", "default"])
+        if allow_edits and self.auto_approve and "--auto" in supported:
             cmd.append("--auto")
-        for f in attach_files[:12]:
-            cmd.extend(["--file", str(f.relative_to(PROJECT_ROOT))])
+        if "--file" in supported:
+            for f in attach_files[:12]:
+                cmd.extend(["--file", str(f.relative_to(PROJECT_ROOT))])
         cmd.append(single_line_prompt)
 
         popen_kwargs: Dict[str, Any] = {

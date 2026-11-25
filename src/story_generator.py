@@ -319,6 +319,25 @@ RETORNE APENAS UM JSON VÁLIDO no formato exato:
 }}"""
 
 
+def _opencode_supported_flags(exe: str) -> set[str]:
+    """Inspect `opencode run --help` so both OpenCode 1.x (Colab) and 2.x work without unknown-flag errors."""
+    try:
+        proc = subprocess.run(
+            [exe, "run", "--help"],
+            stdin=subprocess.DEVNULL,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=10,
+            check=False,
+        )
+        help_text = f"{proc.stdout}\n{proc.stderr}"
+    except Exception:
+        return set()
+    return {flag for flag in ("--standalone", "--archived", "--format", "--auto") if flag in help_text}
+
+
 def _generate_via_opencode(prompt: str, model: str, cli_cmd: str = "opencode", timeout_sec: int = 120) -> Dict[str, Any]:
     """Generate story JSON using the locally installed OpenCode CLI (uses account login, no API key needed)."""
     exe = shutil.which(cli_cmd)
@@ -327,8 +346,17 @@ def _generate_via_opencode(prompt: str, model: str, cli_cmd: str = "opencode", t
     if not model:
         raise ValueError("Nenhum modelo OpenCode especificado (selecione um modelo listado em `opencode models`).")
 
+    supported = _opencode_supported_flags(exe)
     single_line_prompt = " ".join(line.strip() for line in prompt.splitlines() if line.strip())
-    cmd = [exe, "run", "--standalone", "--model", model, "--archived", "--format", "default", single_line_prompt]
+    cmd = [exe, "run"]
+    if "--standalone" in supported:
+        cmd.append("--standalone")
+    cmd.extend(["--model", model])
+    if "--archived" in supported:
+        cmd.append("--archived")
+    if "--format" in supported:
+        cmd.extend(["--format", "default"])
+    cmd.append(single_line_prompt)
 
     popen_kwargs: Dict[str, Any] = {
         "cwd": str(PROJECT_ROOT),
@@ -875,17 +903,23 @@ def parse_custom_script(
             if line_text:
                 parsed_entries.append({"speaker": spk, "text": line_text, "explicit_set": explicit_set})
     else:
-        # Plain text mode: split by lines or sentences; quoted text becomes C, narration becomes N
+        # Plain text mode: extract quoted dialogue as C and split surrounding narration sentences as N
+        token_re = re.compile(r'("[^"]+"|“[^”]+”)')
         for ln in non_empty_lines:
-            parts = re.split(r'(?<=[.!?])\s+', ln)
-            for p in parts:
-                seg = p.strip()
+            for chunk in token_re.split(ln):
+                seg = chunk.strip()
                 if not seg:
                     continue
                 is_quote = (seg.startswith('"') and seg.endswith('"')) or (seg.startswith("“") and seg.endswith("”"))
-                clean = seg.strip('"“”').strip()
-                if clean:
-                    parsed_entries.append({"speaker": "C" if is_quote else "N", "text": clean, "explicit_set": None})
+                if is_quote:
+                    clean = seg.strip('"“”').strip()
+                    if clean:
+                        parsed_entries.append({"speaker": "C", "text": clean, "explicit_set": None})
+                else:
+                    for sent in re.split(r'(?<=[.!?])\s+', seg):
+                        clean = sent.strip()
+                        if clean:
+                            parsed_entries.append({"speaker": "N", "text": clean, "explicit_set": None})
 
     if not parsed_entries:
         raise ValueError("Nenhuma fala válida encontrada no roteiro personalizado.")
