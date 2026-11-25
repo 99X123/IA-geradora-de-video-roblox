@@ -3,13 +3,18 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
+import signal
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import requests
 
-from src.config import AutoShortsConfig, get_secret
+from src.config import AutoShortsConfig, PROJECT_ROOT, get_secret
 from src.utils import setup_logger
 
 logger = setup_logger("autoshorts.story")
@@ -233,6 +238,47 @@ RETORNE APENAS UM JSON VÁLIDO no formato exato:
     }}
   ]
 }}"""
+
+
+def _generate_via_opencode(prompt: str, model: str, cli_cmd: str = "opencode", timeout_sec: int = 120) -> Dict[str, Any]:
+    """Generate story JSON using the locally installed OpenCode CLI (uses account login, no API key needed)."""
+    exe = shutil.which(cli_cmd)
+    if not exe:
+        raise FileNotFoundError(f"OpenCode CLI ('{cli_cmd}') não encontrado no PATH.")
+    if not model:
+        raise ValueError("Nenhum modelo OpenCode especificado (selecione um modelo listado em `opencode models`).")
+
+    single_line_prompt = " ".join(line.strip() for line in prompt.splitlines() if line.strip())
+    cmd = [exe, "run", "--standalone", "--model", model, "--archived", "--format", "default", single_line_prompt]
+
+    popen_kwargs: Dict[str, Any] = {
+        "cwd": str(PROJECT_ROOT),
+        "stdin": subprocess.DEVNULL,
+        "stdout": subprocess.PIPE,
+        "stderr": subprocess.PIPE,
+        "text": True,
+        "encoding": "utf-8",
+        "errors": "replace",
+    }
+    if sys.platform != "win32":
+        popen_kwargs["start_new_session"] = True
+
+    proc = subprocess.Popen(cmd, **popen_kwargs)
+    try:
+        stdout, stderr = proc.communicate(timeout=timeout_sec)
+    except subprocess.TimeoutExpired:
+        if sys.platform == "win32":
+            subprocess.run(["taskkill", "/F", "/T", "/PID", str(proc.pid)], capture_output=True, check=False)
+        else:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except Exception:
+                proc.kill()
+        raise TimeoutError(f"OpenCode excedeu o limite de {timeout_sec}s ao gerar o roteiro.")
+
+    if proc.returncode != 0 or not (stdout or "").strip():
+        raise RuntimeError(f"OpenCode falhou (exit={proc.returncode}): {(stderr or '')[-500:]}")
+    return _extract_json_block(stdout)
 
 
 def _generate_via_gemini(prompt: str, model: str, api_key: str) -> Dict[str, Any]:
@@ -587,8 +633,21 @@ def generate_story(
     gemini_key = get_secret("GEMINI_API_KEY") or get_secret("GOOGLE_API_KEY")
     openai_key = get_secret("OPENAI_API_KEY")
     openai_base = get_secret("OPENAI_BASE_URL")
+    opencode_model = str(cfg.get("opencode.model") or get_secret("OPENCODE_MODEL") or "").strip()
+    opencode_cli = str(cfg.get("opencode.cli_command", "opencode"))
 
-    if selected_provider in ("auto", "gemini") and gemini_key:
+    # Prefer local OpenCode CLI (account login, zero API key!) when selected or configured
+    if selected_provider in ("opencode", "auto") and opencode_model and shutil.which(opencode_cli):
+        try:
+            logger.info("Gerando roteiro via OpenCode CLI local (%s)...", opencode_model)
+            raw_story = _generate_via_opencode(prompt, opencode_model, cli_cmd=opencode_cli)
+            used_provider = f"opencode:{opencode_model}"
+        except Exception as exc:
+            logger.warning("OpenCode CLI falhou ao gerar roteiro (%s). Usando alternativa.", exc)
+            if selected_provider == "opencode":
+                logger.warning("Fallback para gerador local PT-BR após falha do OpenCode.")
+
+    if raw_story is None and selected_provider in ("auto", "gemini") and gemini_key:
         try:
             logger.info("Gerando roteiro via Gemini API (%s)...", model)
             raw_story = _generate_via_gemini(prompt, model, gemini_key)
