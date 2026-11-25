@@ -1,0 +1,32 @@
+{
+  "node_binary": "C:\\Program Files\\nodejs\\node.EXE",
+  "ffmpeg_binary": "C:\\Users\\Carlos\\AppData\\Local\\Programs\\Python\\Python315\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v9.0.2.exe",
+  "nvidia_system_gpu": {
+    "available": false,
+    "name": null,
+    "memory_mb": null,
+    "note": "nvidia-smi não encontrado"
+  },
+  "chromium_webgl": {
+    "platform": "win32",
+    "launch_mode": "gpu_attempt",
+    "browser_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "forced_cpu": false,
+    "fallback_used": false,
+    "gpu_attempt_error": null,
+    "webgl": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "vendor": "WebKit",
+      "renderer": "WebKit WebGL",
+      "unmaskedVendor": "Google Inc. (NVIDIA)",
+      "unmaskedRenderer": "ANGLE (NVIDIA, NVIDIA GeForce GT 710 (0x0000128B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "isSoftware": false,
+      "classification": "gpu_hardware"
+    },
+    "hardware_accelerated": true,
+    "note": "WebGL por hardware confirmado: ANGLE (NVIDIA, NVIDIA GeForce GT 710 (0x0000128B) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "console_errors": []
+  },
+  "gpu_webgl_confirmed": true,
+  "warning": null
+}

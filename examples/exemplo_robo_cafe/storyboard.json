@@ -1,0 +1,746 @@
+{
+  "title": "O Dia em que Meu robô decidiu fazer café no modo turbo Saiu do Controle",
+  "theme": "meu robô decidiu fazer café no modo turbo",
+  "premise": "Leo precisa sobreviver ao caos causado por meu robô decidiu fazer café no modo turbo com a ajuda duvidosa de Bip.",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_sec": 29.9161,
+  "jpeg_quality": 0.93,
+  "captions_enabled": true,
+  "caption_style": {
+    "fontSizePx": 92,
+    "strokeWidthPx": 18,
+    "strokeColor": "#0B0D14",
+    "baseColor": "#FFFFFF",
+    "speakerColors": {
+      "N": "#FFE44D",
+      "C": "#4DF0FF",
+      "S": "#FF7AE6"
+    }
+  },
+  "visual": {
+    "style": "toon-3d",
+    "outline_thickness": 0.028,
+    "bloom_strength": 0.28,
+    "bloom_radius": 0.6,
+    "bloom_threshold": 0.95,
+    "exposure": 1.15,
+    "ground_min_cam_y": 0.35
+  },
+  "characters": [
+    {
+      "id": "narrator",
+      "speaker_code": "N",
+      "name": "Leo",
+      "role": "protagonista",
+      "rig": "human",
+      "skin": "#FFCCA4",
+      "shirt": "#3B7BFF",
+      "pants": "#2A314A",
+      "shoe": "#EEF2FA",
+      "hairColor": "#231D28",
+      "hairStyle": "messy",
+      "voice_role": "narrator"
+    },
+    {
+      "id": "costar",
+      "speaker_code": "C",
+      "name": "Bip",
+      "role": "co-protagonista",
+      "rig": "bot",
+      "bodyColor": "#E5EEF8",
+      "accentColor": "#35D4FF",
+      "description": "Um robô assistente super literal e cheio de confiança duvidosa.",
+      "voice_role": "costar"
+    }
+  ],
+  "metrics": {
+    "shot_count": 11,
+    "shots_per_minute": 22.1,
+    "max_shot_duration_sec": 3.235
+  },
+  "shots": [
+    {
+      "shot_id": 1,
+      "line_index": 0,
+      "start": 0.0,
+      "end": 3.2346,
+      "speaker": "N",
+      "dialogue": "Eu só queria um dia normal, até meu robô decidiu fazer café no modo turbo aparecer na minha sala.",
+      "beat_type": "hook",
+      "set": "living_room",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": -0.35,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "shock",
+          "emotion": "shock",
+          "lip_sync": false
+        },
+        {
+          "id": "costar",
+          "x": 1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": -0.35,
+          "action": "idle",
+          "emotion": "smug",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator",
+        "costar"
+      ],
+      "props": [
+        {
+          "name": "coffee_mug",
+          "attach_to": "narrator",
+          "hand": "right",
+          "pos": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": 1.0,
+          "focus": false
+        }
+      ],
+      "camera": {
+        "move": "pushIn",
+        "family": "front_eye",
+        "yaw_side": "front",
+        "framing": "body",
+        "zoom": 1.2,
+        "yaw0": -0.22,
+        "yaw1": 0.06,
+        "zoom0": 1.42,
+        "zoom1": 1.06
+      },
+      "effects": {
+        "vignette": 0.22,
+        "speed_lines": 0.55,
+        "flash": true,
+        "screen_shake": 0.45,
+        "impact_text": "COMO ASSIM?!"
+      },
+      "sfx": "bass_hit"
+    },
+    {
+      "shot_id": 2,
+      "line_index": 0,
+      "start": 3.2346,
+      "end": 6.293,
+      "speaker": "N",
+      "dialogue": "Eu só queria um dia normal, até meu robô decidiu fazer café no modo turbo aparecer na minha sala.",
+      "beat_type": "hook",
+      "set": "living_room",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "shock",
+          "emotion": "shock",
+          "lip_sync": false
+        },
+        {
+          "id": "costar",
+          "x": -1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": 0.35,
+          "action": "idle",
+          "emotion": "smug",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator"
+      ],
+      "props": [
+        {
+          "name": "coffee_mug",
+          "attach_to": "narrator",
+          "hand": "right",
+          "pos": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": 1.0,
+          "focus": false
+        }
+      ],
+      "camera": {
+        "move": "dutchPanic",
+        "family": "dutch_roll",
+        "yaw_side": "left",
+        "framing": "head",
+        "zoom": 1.12
+      },
+      "effects": {
+        "vignette": 0.22,
+        "speed_lines": 0.55
+      },
+      "sfx": null
+    },
+    {
+      "shot_id": 3,
+      "line_index": 1,
+      "start": 6.293,
+      "end": 9.1336,
+      "speaker": "C",
+      "dialogue": "Calma, Leo. Eu tenho um plano totalmente científico e sem chance de dar errado.",
+      "beat_type": "setup",
+      "set": "living_room",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "costar",
+          "x": -0.35,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "explain",
+          "emotion": "smug",
+          "lip_sync": true
+        },
+        {
+          "id": "narrator",
+          "x": 1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": -0.35,
+          "action": "idle",
+          "emotion": "confused",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "costar",
+        "narrator"
+      ],
+      "props": [
+        {
+          "name": "scroll",
+          "attach_to": "costar",
+          "hand": "right",
+          "pos": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": 1.0,
+          "focus": false
+        }
+      ],
+      "camera": {
+        "move": "dolly",
+        "family": "dolly_slide",
+        "yaw_side": "front",
+        "framing": "body",
+        "zoom": 1.2,
+        "yaw0": -0.48,
+        "yaw1": 0.42
+      },
+      "effects": {
+        "vignette": 0.22
+      },
+      "sfx": "pop"
+    },
+    {
+      "shot_id": 4,
+      "line_index": 1,
+      "start": 9.1336,
+      "end": 11.9743,
+      "speaker": "C",
+      "dialogue": "Calma, Leo. Eu tenho um plano totalmente científico e sem chance de dar errado.",
+      "beat_type": "setup",
+      "set": "living_room",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "costar",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "explain",
+          "emotion": "smug",
+          "lip_sync": true
+        },
+        {
+          "id": "narrator",
+          "x": -1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": 0.35,
+          "action": "idle",
+          "emotion": "confused",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "costar"
+      ],
+      "props": [
+        {
+          "name": "scroll",
+          "attach_to": "costar",
+          "hand": "right",
+          "pos": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": 1.0,
+          "focus": false
+        }
+      ],
+      "camera": {
+        "move": "dutchPanic",
+        "family": "dutch_roll",
+        "yaw_side": "left",
+        "framing": "head",
+        "zoom": 1.12
+      },
+      "effects": {
+        "vignette": 0.22
+      },
+      "sfx": null
+    },
+    {
+      "shot_id": 5,
+      "line_index": 2,
+      "start": 11.9743,
+      "end": 14.557,
+      "speaker": "N",
+      "dialogue": "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade.",
+      "beat_type": "escalation",
+      "set": "town_square",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": -1.6,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 1.25,
+          "action": "run",
+          "emotion": "panic",
+          "lip_sync": false,
+          "x1": 1.4
+        },
+        {
+          "id": "costar",
+          "x": 1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": -0.35,
+          "action": "idle",
+          "emotion": "shock",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator"
+      ],
+      "props": [],
+      "camera": {
+        "move": "vertigo",
+        "family": "vertigo",
+        "yaw_side": "front",
+        "framing": "head",
+        "zoom": 1.12
+      },
+      "effects": {
+        "vignette": 0.22,
+        "speed_lines": 0.55,
+        "impact_text": "CAOS TOTAL!"
+      },
+      "sfx": "footsteps"
+    },
+    {
+      "shot_id": 6,
+      "line_index": 2,
+      "start": 14.557,
+      "end": 17.1396,
+      "speaker": "N",
+      "dialogue": "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade.",
+      "beat_type": "escalation",
+      "set": "town_square",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": -1.6,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 1.25,
+          "action": "run",
+          "emotion": "panic",
+          "lip_sync": false,
+          "x1": 1.4
+        },
+        {
+          "id": "costar",
+          "x": -1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": 0.35,
+          "action": "idle",
+          "emotion": "shock",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator"
+      ],
+      "props": [],
+      "camera": {
+        "move": "dutchPanic",
+        "family": "dutch_roll",
+        "yaw_side": "left",
+        "framing": "head",
+        "zoom": 1.12
+      },
+      "effects": {
+        "vignette": 0.22,
+        "speed_lines": 0.55
+      },
+      "sfx": null
+    },
+    {
+      "shot_id": 7,
+      "line_index": 2,
+      "start": 17.1396,
+      "end": 19.7223,
+      "speaker": "N",
+      "dialogue": "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade.",
+      "beat_type": "escalation",
+      "set": "town_square",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": -1.6,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 1.25,
+          "action": "run",
+          "emotion": "panic",
+          "lip_sync": false,
+          "x1": 1.4
+        },
+        {
+          "id": "costar",
+          "x": 1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": -0.35,
+          "action": "idle",
+          "emotion": "shock",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator"
+      ],
+      "props": [],
+      "camera": {
+        "move": "pushIn",
+        "family": "front_eye",
+        "yaw_side": "front",
+        "framing": "head",
+        "zoom": 1.12,
+        "yaw0": -0.22,
+        "yaw1": 0.06,
+        "zoom0": 1.42,
+        "zoom1": 1.06
+      },
+      "effects": {
+        "vignette": 0.22,
+        "speed_lines": 0.55
+      },
+      "sfx": null
+    },
+    {
+      "shot_id": 8,
+      "line_index": 3,
+      "start": 19.7223,
+      "end": 22.6603,
+      "speaker": "N",
+      "dialogue": "Em vez de explodir, a praça inteira aplaudiu e me entregou um troféu de maior invenção do ano.",
+      "beat_type": "climax",
+      "set": "town_square_golden",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": -0.35,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "celebrate",
+          "emotion": "happy",
+          "lip_sync": false
+        },
+        {
+          "id": "costar",
+          "x": -1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": 0.35,
+          "action": "celebrate",
+          "emotion": "smug",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator",
+        "costar"
+      ],
+      "props": [
+        {
+          "name": "trophy",
+          "attach_to": "narrator",
+          "hand": "right",
+          "pos": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": 1.0,
+          "focus": false
+        }
+      ],
+      "camera": {
+        "move": "orbit",
+        "family": "side_orbit",
+        "yaw_side": "left",
+        "framing": "body",
+        "zoom": 1.2,
+        "yaw0": 0.48,
+        "yaw1": -0.42
+      },
+      "effects": {
+        "vignette": 0.22,
+        "confetti": true,
+        "sparks": true,
+        "impact_text": "VITÓRIA!"
+      },
+      "sfx": "bell"
+    },
+    {
+      "shot_id": 9,
+      "line_index": 3,
+      "start": 22.6603,
+      "end": 25.5983,
+      "speaker": "N",
+      "dialogue": "Em vez de explodir, a praça inteira aplaudiu e me entregou um troféu de maior invenção do ano.",
+      "beat_type": "climax",
+      "set": "town_square_golden",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "celebrate",
+          "emotion": "happy",
+          "lip_sync": false
+        },
+        {
+          "id": "costar",
+          "x": 1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": -0.35,
+          "action": "celebrate",
+          "emotion": "smug",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator"
+      ],
+      "props": [
+        {
+          "name": "trophy",
+          "attach_to": "narrator",
+          "hand": "right",
+          "pos": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "rot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": 1.0,
+          "focus": false
+        }
+      ],
+      "camera": {
+        "move": "pushIn",
+        "family": "front_eye",
+        "yaw_side": "front",
+        "framing": "head",
+        "zoom": 1.12,
+        "yaw0": -0.22,
+        "yaw1": 0.06,
+        "zoom0": 1.42,
+        "zoom1": 1.06
+      },
+      "effects": {
+        "vignette": 0.22,
+        "confetti": true,
+        "sparks": true
+      },
+      "sfx": null
+    },
+    {
+      "shot_id": 10,
+      "line_index": 4,
+      "start": 25.5983,
+      "end": 27.7572,
+      "speaker": "N",
+      "dialogue": "Alguém sabe como mudar de planeta antes de segunda-feira?",
+      "beat_type": "twist",
+      "set": "living_room_night",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": -0.35,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "defeat",
+          "emotion": "deadpan",
+          "lip_sync": false
+        },
+        {
+          "id": "costar",
+          "x": -1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": 0.35,
+          "action": "idle",
+          "emotion": "smug",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator",
+        "costar"
+      ],
+      "props": [],
+      "camera": {
+        "move": "pullOut",
+        "family": "wide_pull",
+        "yaw_side": "right",
+        "framing": "body",
+        "zoom": 1.2,
+        "yaw0": -0.14,
+        "yaw1": 0.28,
+        "zoom0": 1.06,
+        "zoom1": 1.48
+      },
+      "effects": {
+        "vignette": 0.22
+      },
+      "sfx": "trombone"
+    },
+    {
+      "shot_id": 11,
+      "line_index": 4,
+      "start": 27.7572,
+      "end": 29.9161,
+      "speaker": "N",
+      "dialogue": "Alguém sabe como mudar de planeta antes de segunda-feira?",
+      "beat_type": "twist",
+      "set": "living_room_night",
+      "set_state": {},
+      "characters": [
+        {
+          "id": "narrator",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.85,
+          "ry": 0.18,
+          "action": "defeat",
+          "emotion": "deadpan",
+          "lip_sync": false
+        },
+        {
+          "id": "costar",
+          "x": 1.25,
+          "y": 0.0,
+          "z": -0.75,
+          "ry": -0.35,
+          "action": "idle",
+          "emotion": "smug",
+          "lip_sync": false
+        }
+      ],
+      "focus_ids": [
+        "narrator"
+      ],
+      "props": [],
+      "camera": {
+        "move": "pushIn",
+        "family": "front_eye",
+        "yaw_side": "front",
+        "framing": "head",
+        "zoom": 1.12,
+        "yaw0": -0.22,
+        "yaw1": 0.06,
+        "zoom0": 1.42,
+        "zoom1": 1.06
+      },
+      "effects": {
+        "vignette": 0.22
+      },
+      "sfx": null
+    }
+  ]
+}

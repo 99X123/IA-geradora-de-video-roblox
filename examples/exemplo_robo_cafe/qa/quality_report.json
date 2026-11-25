@@ -1,0 +1,201 @@
+{
+  "video_path": "examples\\exemplo_robo_cafe\\exemplo_robo_cafe.mp4",
+  "approved": true,
+  "technical_passed": true,
+  "visual_algorithmic_passed": true,
+  "media_info": {
+    "tool": "ffmpeg_fallback",
+    "path": "examples\\exemplo_robo_cafe\\exemplo_robo_cafe.mp4",
+    "size_bytes": 25914004,
+    "duration_sec": 29.83,
+    "has_video": true,
+    "has_audio": true,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate": 44100,
+    "audio_channels": 2,
+    "nb_frames": 895
+  },
+  "technical_checks": {
+    "file_exists_nonempty": {
+      "passed": true,
+      "size_bytes": 25914004
+    },
+    "decode_integrity": {
+      "passed": true,
+      "error_count": 0,
+      "errors": []
+    },
+    "resolution": {
+      "passed": true,
+      "actual": [
+        1080,
+        1920
+      ],
+      "expected": [
+        1080,
+        1920
+      ]
+    },
+    "fps": {
+      "passed": true,
+      "actual": 30.0,
+      "expected": 30.0
+    },
+    "duration": {
+      "passed": true,
+      "actual_sec": 29.83,
+      "expected_sec": 29.9161,
+      "tolerance_sec": 1.5
+    },
+    "video_codec_h264": {
+      "passed": true,
+      "actual": "h264"
+    },
+    "pixel_format_yuv420p": {
+      "passed": true,
+      "actual": "yuv420p"
+    },
+    "audio_stream_aac": {
+      "passed": true,
+      "has_audio": true,
+      "actual": "aac"
+    },
+    "audio_levels": {
+      "passed": true,
+      "mean_volume_db": -18.1,
+      "max_volume_db": -1.1,
+      "min_required_mean_db": -50.0
+    },
+    "unexpected_black_frames": {
+      "passed": true,
+      "unexpected_black_sec": 0.0,
+      "unexpected_black_ratio": 0.0,
+      "max_allowed_ratio": 0.12,
+      "intervals": []
+    },
+    "subtitle_compatibility": {
+      "passed": true,
+      "cue_count": 30,
+      "last_subtitle_end_sec": 28.6,
+      "video_duration_sec": 29.83
+    }
+  },
+  "visual_checks": {
+    "contact_sheet": "examples\\exemplo_robo_cafe\\qa\\qa_contact_sheet.png",
+    "algorithmic": {
+      "passed": true,
+      "frames_inspected": 16,
+      "critical_issues": 0,
+      "issues": [],
+      "frame_stats": [
+        {
+          "file": "qa_01_0.25s.jpg",
+          "mean_luma": 148.73,
+          "std_rgb": 61.47,
+          "overexposed_ratio": 0.0093
+        },
+        {
+          "file": "qa_02_2.21s.jpg",
+          "mean_luma": 144.9,
+          "std_rgb": 63.5,
+          "overexposed_ratio": 0.006
+        },
+        {
+          "file": "qa_03_4.16s.jpg",
+          "mean_luma": 140.33,
+          "std_rgb": 74.2,
+          "overexposed_ratio": 0.0108
+        },
+        {
+          "file": "qa_04_6.12s.jpg",
+          "mean_luma": 135.27,
+          "std_rgb": 69.99,
+          "overexposed_ratio": 0.0
+        },
+        {
+          "file": "qa_05_8.07s.jpg",
+          "mean_luma": 143.22,
+          "std_rgb": 61.82,
+          "overexposed_ratio": 0.008
+        },
+        {
+          "file": "qa_06_10.03s.jpg",
+          "mean_luma": 136.68,
+          "std_rgb": 80.28,
+          "overexposed_ratio": 0.0059
+        },
+        {
+          "file": "qa_07_11.98s.jpg",
+          "mean_luma": 152.6,
+          "std_rgb": 72.69,
+          "overexposed_ratio": 0.0
+        },
+        {
+          "file": "qa_08_13.94s.jpg",
+          "mean_luma": 165.4,
+          "std_rgb": 65.21,
+          "overexposed_ratio": 0.0072
+        },
+        {
+          "file": "qa_09_15.89s.jpg",
+          "mean_luma": 150.07,
+          "std_rgb": 74.64,
+          "overexposed_ratio": 0.0072
+        },
+        {
+          "file": "qa_10_17.85s.jpg",
+          "mean_luma": 157.02,
+          "std_rgb": 72.32,
+          "overexposed_ratio": 0.0072
+        },
+        {
+          "file": "qa_11_19.80s.jpg",
+          "mean_luma": 165.73,
+          "std_rgb": 54.18,
+          "overexposed_ratio": 0.0059
+        },
+        {
+          "file": "qa_12_21.76s.jpg",
+          "mean_luma": 157.9,
+          "std_rgb": 61.55,
+          "overexposed_ratio": 0.0079
+        },
+        {
+          "file": "qa_13_23.71s.jpg",
+          "mean_luma": 131.96,
+          "std_rgb": 72.05,
+          "overexposed_ratio": 0.0065
+        },
+        {
+          "file": "qa_14_25.67s.jpg",
+          "mean_luma": 61.64,
+          "std_rgb": 49.11,
+          "overexposed_ratio": 0.0079
+        },
+        {
+          "file": "qa_15_27.62s.jpg",
+          "mean_luma": 57.59,
+          "std_rgb": 46.44,
+          "overexposed_ratio": 0.0076
+        },
+        {
+          "file": "qa_16_29.58s.jpg",
+          "mean_luma": 59.36,
+          "std_rgb": 56.92,
+          "overexposed_ratio": 0.0
+        }
+      ]
+    },
+    "vision_ai": {
+      "executed": false,
+      "provider": null,
+      "reason": "Nenhum modelo de visão configurado (GEMINI_API_KEY/OPENAI_API_KEY ausente); aplicada apenas inspeção algorítmica local."
+    }
+  },
+  "failed_checks": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "autoshorts-ai",
+  "version": "1.0.0",
+  "description": "AutoShorts AI — Automated 3D Toon Vertical Short Video Factory (Three.js + Playwright + FFmpeg + Colab)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "probe": "node engine/render_worker.mjs probe",
+    "still": "node engine/render_worker.mjs still",
+    "board": "node engine/render_worker.mjs board",
+    "render": "node engine/render_all.mjs"
+  },
+  "dependencies": {
+    "three": "0.170.0",
+    "playwright": "1.49.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

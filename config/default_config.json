@@ -1,0 +1,143 @@
+{
+  "project_name": "AutoShorts AI",
+  "version": "1.0.0",
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "fps": 30,
+    "target_duration_sec": 60,
+    "end_pad_sec": 0.5,
+    "video_codec": "libx264",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "pixel_format": "yuv420p",
+    "crf": 18,
+    "preset": "veryfast",
+    "jpeg_quality": 0.93,
+    "num_parts": 10,
+    "workers": 2,
+    "quality_preset": "production"
+  },
+  "story": {
+    "language": "pt-BR",
+    "provider": "auto",
+    "model": "gemini-2.5-flash",
+    "num_characters": 2,
+    "style": "comedia-absurda",
+    "target_words_per_minute": 150,
+    "shots_per_minute_min": 18,
+    "shots_per_minute_max": 30,
+    "max_shot_duration_sec": 4.5,
+    "require_storyboard_approval": false
+  },
+  "tts": {
+    "provider": "auto",
+    "language": "pt-BR",
+    "rate": "+6%",
+    "pitch": "+0Hz",
+    "pause_between_lines_ms": 140,
+    "voices": {
+      "narrator": {
+        "edge": "pt-BR-AntonioNeural",
+        "google_cloud": "pt-BR-Neural2-B",
+        "openai": "onyx",
+        "rate": "+8%",
+        "pitch": "+2Hz"
+      },
+      "costar": {
+        "edge": "pt-BR-FranciscaNeural",
+        "google_cloud": "pt-BR-Neural2-C",
+        "openai": "nova",
+        "rate": "+2%",
+        "pitch": "-4Hz"
+      },
+      "secondary": {
+        "edge": "pt-BR-ThalitaMultilingualNeural",
+        "google_cloud": "pt-BR-Neural2-A",
+        "openai": "shimmer",
+        "rate": "+4%",
+        "pitch": "+0Hz"
+      }
+    }
+  },
+  "alignment": {
+    "primary_engine": "auto",
+    "whisper_model": "small",
+    "silence_noise_db": -38,
+    "silence_min_duration_sec": 0.18,
+    "allow_energy_fallback": true
+  },
+  "subtitles": {
+    "language": "pt-BR",
+    "max_words_per_chunk": 3,
+    "font_family": "Inter",
+    "font_weight": 900,
+    "font_size_px": 92,
+    "stroke_width_px": 18,
+    "stroke_color": "#0B0D14",
+    "base_color": "#FFFFFF",
+    "y_center_px": 1395,
+    "word_gap_px": 46,
+    "safe_band_top_ratio": 0.665,
+    "speaker_colors": {
+      "N": "#FFE44D",
+      "C": "#4DF0FF",
+      "S": "#FF7AE6"
+    }
+  },
+  "audio": {
+    "sample_rate": 44100,
+    "enable_sfx": true,
+    "enable_music": true,
+    "sfx_volume": 0.42,
+    "music_volume": 0.12,
+    "voice_loudnorm_i": -15.0,
+    "voice_loudnorm_tp": -1.5,
+    "voice_loudnorm_lra": 11.0,
+    "limiter_limit": 0.95
+  },
+  "visual": {
+    "style": "toon-3d",
+    "outline_thickness": 0.028,
+    "bloom_strength": 0.28,
+    "bloom_radius": 0.6,
+    "bloom_threshold": 0.95,
+    "exposure": 1.15,
+    "ground_min_cam_y": 0.35
+  },
+  "drive": {
+    "enabled": false,
+    "root_folder": "AutoShorts AI",
+    "mount_point": "/content/drive",
+    "my_drive_subpath": "MyDrive",
+    "folders": [
+      "Videos",
+      "Projects",
+      "Audio",
+      "Scripts",
+      "Storyboards",
+      "Subtitles",
+      "Logs",
+      "Reports",
+      "Backups"
+    ]
+  },
+  "opencode": {
+    "enabled": true,
+    "cli_command": "opencode",
+    "model": "",
+    "max_fix_cycles": 3,
+    "timeout_sec": 300,
+    "create_backup": true,
+    "auto_approve": false
+  },
+  "quality": {
+    "max_black_frame_ratio": 0.12,
+    "min_audio_rms_db": -50.0,
+    "duration_tolerance_sec": 1.5,
+    "subtitle_sync_tolerance_sec": 1.5,
+    "contact_sheet_interval_sec": 2.0,
+    "enable_vision_review": true
+  }
+}

@@ -1,0 +1,3 @@
+2026-11-25 01:08:20 | INFO    | autoshorts.run.exemplo_robo_cafe | === INICIANDO PRODUÇÃO AUTOSHORTS AI: exemplo_robo_cafe (tema='meu robô decidiu fazer café no modo turbo') ===
+2026-11-25 01:08:22 | INFO    | autoshorts.run.exemplo_robo_cafe | WebGL Probe: hardware_accelerated=True | renderer=ANGLE (NVIDIA, NVIDIA GeForce GT 710 (0x0000128B) Direct3D11 vs_5_0 ps_5_0, D3D11)
+2026-11-25 01:10:34 | INFO    | autoshorts.run.exemplo_robo_cafe | === PRODUÇÃO FINALIZADA: status=completed | video=examples\exemplo_robo_cafe\exemplo_robo_cafe.mp4 ===

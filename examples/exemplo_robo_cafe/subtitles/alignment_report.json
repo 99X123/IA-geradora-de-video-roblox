@@ -1,0 +1,8 @@
+{
+  "alignment_method": "provider_word_boundary_verified (edge_tts_word_boundary)",
+  "fallback_used": false,
+  "word_count": 85,
+  "line_count": 5,
+  "silencedetect_count": 10,
+  "warnings": []
+}

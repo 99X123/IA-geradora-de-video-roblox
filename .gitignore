@@ -1,39 +1,31 @@
-# Ambientes virtuais e caches Python
-.venv/
-venv/
-env/
+# AutoShorts AI
+node_modules/
 __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
+.venv/
+venv/
+*.egg-info/
 
-# Segredos e variáveis locais
+# Runtime outputs & temporary artifacts
+output/
+work/
+parts/
+tmp/
+logs/*.log
+logs/*.json
+backups/
+examples/**/*.mp4
+examples/**/*.wav
+examples/**/audio/lines/
+examples/**/qa/frames/
+
+# Secrets & credentials (NEVER commit or sync to Google Drive)
 .env
-.env.local
-
-# Modelos de IA baixados automaticamente (muito grandes para o GitHub)
-models/kokoro/*.onnx
-models/kokoro/*.bin
-models/kokoro/*.part
-models/piper/*.onnx
-models/piper/*.json
-models/whisper/*
-!models/README.md
-
-# Projetos gerados, vídeos, temporários e logs (salvos localmente ou no Google Drive)
-projects/
-temp/
-logs/
-
-# Áudios instrumentais/SFX sintetizados automaticamente na inicialização
-assets/music/*.wav
-assets/sounds/*.wav
-
-# Arquivos de sistema / IDE
-.DS_Store
-Thumbs.db
-desktop.ini
-*.tmp
-*.log
+.env.*
+config/credentials.json
+*.key
+*.pem
+*service_account*.json
+*client_secret*.json

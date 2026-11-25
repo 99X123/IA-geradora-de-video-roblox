@@ -1,0 +1,2347 @@
+{
+  "vo_wav": "examples\\exemplo_robo_cafe\\audio\\vo.wav",
+  "fps": 30,
+  "vo_duration_sec": 29.4161,
+  "duration_sec": 29.9161,
+  "alignment_method": "provider_word_boundary_verified (edge_tts_word_boundary)",
+  "fallback_used": false,
+  "silencedetect_intervals": [
+    [
+      0.0,
+      0.2357
+    ],
+    [
+      1.565,
+      1.8562
+    ],
+    [
+      5.31,
+      6.4134
+    ],
+    [
+      7.1012,
+      7.3959
+    ],
+    [
+      10.9531,
+      12.1008
+    ],
+    [
+      13.6199,
+      13.8777
+    ],
+    [
+      18.7327,
+      19.8372
+    ],
+    [
+      20.9159,
+      21.1494
+    ],
+    [
+      24.6168,
+      25.7261
+    ],
+    [
+      28.6002,
+      29.4161
+    ]
+  ],
+  "warnings": [],
+  "words": [
+    {
+      "word": "Eu",
+      "start": 0.1763,
+      "end": 0.3383,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "só",
+      "start": 0.3499,
+      "end": 0.5467,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "queria",
+      "start": 0.5583,
+      "end": 0.7897,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "um",
+      "start": 0.8013,
+      "end": 0.8823,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "dia",
+      "start": 0.8939,
+      "end": 1.079,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "normal",
+      "start": 1.0907,
+      "end": 1.5652,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "até",
+      "start": 1.8198,
+      "end": 2.0282,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "meu",
+      "start": 2.0397,
+      "end": 2.1786,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "robô",
+      "start": 2.1902,
+      "end": 2.468,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "decidiu",
+      "start": 2.4795,
+      "end": 2.8152,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "fazer",
+      "start": 2.8268,
+      "end": 3.1277,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "café",
+      "start": 3.1393,
+      "end": 3.4402,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "no",
+      "start": 3.4518,
+      "end": 3.5327,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "modo",
+      "start": 3.5443,
+      "end": 3.8568,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "turbo",
+      "start": 3.8684,
+      "end": 4.1115,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "aparecer",
+      "start": 4.123,
+      "end": 4.6092,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "na",
+      "start": 4.6208,
+      "end": 4.7133,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "minha",
+      "start": 4.7249,
+      "end": 4.9332,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "sala",
+      "start": 4.9448,
+      "end": 5.3036,
+      "speaker": "N",
+      "line_index": 0,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "Calma",
+      "start": 6.343,
+      "end": 6.7229,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "Leo",
+      "start": 6.7474,
+      "end": 7.0905,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "Eu",
+      "start": 7.347,
+      "end": 7.4695,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "tenho",
+      "start": 7.4817,
+      "end": 7.6901,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "um",
+      "start": 7.7023,
+      "end": 7.7881,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "plano",
+      "start": 7.8004,
+      "end": 8.119,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "totalmente",
+      "start": 8.1313,
+      "end": 8.7072,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "científico",
+      "start": 8.7195,
+      "end": 9.4793,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "e",
+      "start": 9.516,
+      "end": 9.565,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "sem",
+      "start": 9.5773,
+      "end": 9.7979,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "chance",
+      "start": 9.8102,
+      "end": 10.1901,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "de",
+      "start": 10.2023,
+      "end": 10.3004,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "dar",
+      "start": 10.3126,
+      "end": 10.472,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "errado",
+      "start": 10.4842,
+      "end": 10.9376,
+      "speaker": "C",
+      "line_index": 1,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "Quando",
+      "start": 12.0243,
+      "end": 12.2905,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "fomos",
+      "start": 12.3021,
+      "end": 12.6377,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "para",
+      "start": 12.6493,
+      "end": 12.7882,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "a",
+      "start": 12.7998,
+      "end": 12.8398,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "praça",
+      "start": 12.8345,
+      "end": 13.1238,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "central",
+      "start": 13.1354,
+      "end": 13.5984,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "o",
+      "start": 13.8414,
+      "end": 13.9109,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "assunto",
+      "start": 13.9225,
+      "end": 14.3738,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "sobre",
+      "start": 14.3854,
+      "end": 14.6169,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "meu",
+      "start": 14.6285,
+      "end": 14.7442,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "robô",
+      "start": 14.7558,
+      "end": 15.0336,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "decidiu",
+      "start": 15.0451,
+      "end": 15.3808,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "fazer",
+      "start": 15.3923,
+      "end": 15.7048,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "café",
+      "start": 15.7164,
+      "end": 16.0289,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "no",
+      "start": 16.0405,
+      "end": 16.1215,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "modo",
+      "start": 16.1331,
+      "end": 16.4456,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "turbo",
+      "start": 16.4572,
+      "end": 16.7928,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "já",
+      "start": 16.8044,
+      "end": 16.9317,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "tinha",
+      "start": 16.9433,
+      "end": 17.2095,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "virado",
+      "start": 17.221,
+      "end": 17.5451,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "o",
+      "start": 17.5567,
+      "end": 17.5967,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "maior",
+      "start": 17.5798,
+      "end": 17.9039,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "caos",
+      "start": 17.9155,
+      "end": 18.1585,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "da",
+      "start": 18.1701,
+      "end": 18.2627,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "cidade",
+      "start": 18.2743,
+      "end": 18.7372,
+      "speaker": "N",
+      "line_index": 2,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "Em",
+      "start": 19.7723,
+      "end": 19.9575,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "vez",
+      "start": 19.969,
+      "end": 20.2352,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "de",
+      "start": 20.2468,
+      "end": 20.3278,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "explodir",
+      "start": 20.3394,
+      "end": 20.8602,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "a",
+      "start": 21.1149,
+      "end": 21.1959,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "praça",
+      "start": 21.2075,
+      "end": 21.52,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "inteira",
+      "start": 21.5315,
+      "end": 21.8556,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "aplaudiu",
+      "start": 21.8672,
+      "end": 22.3302,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "e",
+      "start": 22.3418,
+      "end": 22.3818,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "me",
+      "start": 22.388,
+      "end": 22.4343,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "entregou",
+      "start": 22.4459,
+      "end": 22.7931,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "um",
+      "start": 22.8047,
+      "end": 22.8857,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "troféu",
+      "start": 22.8973,
+      "end": 23.2677,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "de",
+      "start": 23.2793,
+      "end": 23.3487,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "maior",
+      "start": 23.3603,
+      "end": 23.6728,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "invenção",
+      "start": 23.6843,
+      "end": 24.182,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "do",
+      "start": 24.1936,
+      "end": 24.3325,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "ano",
+      "start": 24.344,
+      "end": 24.6102,
+      "speaker": "N",
+      "line_index": 3,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "Alguém",
+      "start": 25.6483,
+      "end": 26.0187,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "sabe",
+      "start": 26.0303,
+      "end": 26.3428,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "como",
+      "start": 26.3543,
+      "end": 26.528,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "mudar",
+      "start": 26.5395,
+      "end": 26.8173,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "de",
+      "start": 26.8288,
+      "end": 26.9098,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "planeta",
+      "start": 26.9215,
+      "end": 27.3613,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "antes",
+      "start": 27.3728,
+      "end": 27.7085,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "de",
+      "start": 27.72,
+      "end": 27.801,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    },
+    {
+      "word": "segunda-feira",
+      "start": 27.8127,
+      "end": 28.5997,
+      "speaker": "N",
+      "line_index": 4,
+      "source": "edge_tts_word_boundary"
+    }
+  ],
+  "lines": [
+    {
+      "index": 0,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Eu só queria um dia normal, até meu robô decidiu fazer café no modo turbo aparecer na minha sala.",
+      "start": 0.1763,
+      "end": 5.3036,
+      "word_count": 19
+    },
+    {
+      "index": 1,
+      "speaker": "C",
+      "character_id": "costar",
+      "text": "Calma, Leo. Eu tenho um plano totalmente científico e sem chance de dar errado.",
+      "start": 6.343,
+      "end": 10.9376,
+      "word_count": 14
+    },
+    {
+      "index": 2,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade.",
+      "start": 12.0243,
+      "end": 18.7372,
+      "word_count": 25
+    },
+    {
+      "index": 3,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Em vez de explodir, a praça inteira aplaudiu e me entregou um troféu de maior invenção do ano.",
+      "start": 19.7723,
+      "end": 24.6102,
+      "word_count": 18
+    },
+    {
+      "index": 4,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Alguém sabe como mudar de planeta antes de segunda-feira?",
+      "start": 25.6483,
+      "end": 28.5997,
+      "word_count": 9
+    }
+  ],
+  "env": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.2714,
+    0.6616,
+    0.8548,
+    0.6506,
+    0.3301,
+    0.2238,
+    0.2085,
+    0.3639,
+    0.7055,
+    0.6632,
+    0.3374,
+    0.1181,
+    0.0546,
+    0.5585,
+    0.6349,
+    0.3464,
+    0.4805,
+    0.6881,
+    0.4999,
+    0.4627,
+    0.4824,
+    0.2651,
+    0.1944,
+    0.2531,
+    0.7194,
+    0.7957,
+    0.5991,
+    0.4506,
+    0.5254,
+    0.6503,
+    0.4848,
+    0.34,
+    0.3549,
+    0.4107,
+    0.5571,
+    0.6467,
+    0.6689,
+    0.5967,
+    0.4236,
+    0.2021,
+    0.0707,
+    0.0248,
+    0.0087,
+    0.003,
+    0.0011,
+    0.0004,
+    0.0001,
+    0.0,
+    0.0394,
+    0.4173,
+    0.4611,
+    0.1614,
+    0.0565,
+    0.4583,
+    0.4439,
+    0.3794,
+    0.3837,
+    0.7304,
+    0.7361,
+    0.6443,
+    0.4402,
+    0.6653,
+    0.8829,
+    0.6484,
+    0.2966,
+    0.192,
+    0.689,
+    0.8911,
+    0.7978,
+    0.4658,
+    0.5776,
+    0.3323,
+    0.2513,
+    0.1964,
+    0.1596,
+    0.0747,
+    0.1645,
+    0.4412,
+    0.4133,
+    0.1447,
+    0.116,
+    0.4713,
+    0.5596,
+    0.281,
+    0.1862,
+    0.4284,
+    0.4997,
+    0.3085,
+    0.1268,
+    0.062,
+    0.3611,
+    0.6281,
+    0.3014,
+    0.109,
+    0.0382,
+    0.3527,
+    0.5484,
+    0.5276,
+    0.4359,
+    0.4912,
+    0.4675,
+    0.3912,
+    0.4299,
+    0.5789,
+    0.7398,
+    0.681,
+    0.3874,
+    0.3349,
+    0.4695,
+    0.1877,
+    0.0657,
+    0.0864,
+    0.4396,
+    0.5647,
+    0.508,
+    0.3768,
+    0.3083,
+    0.688,
+    0.5628,
+    0.197,
+    0.2524,
+    0.5058,
+    0.4509,
+    0.469,
+    0.5184,
+    0.2998,
+    0.2363,
+    0.2015,
+    0.1396,
+    0.5934,
+    0.8577,
+    0.6237,
+    0.442,
+    0.2943,
+    0.4611,
+    0.4023,
+    0.3171,
+    0.3419,
+    0.4477,
+    0.429,
+    0.4129,
+    0.4426,
+    0.2647,
+    0.2333,
+    0.2658,
+    0.4026,
+    0.5876,
+    0.6395,
+    0.563,
+    0.3915,
+    0.3237,
+    0.2013,
+    0.0704,
+    0.0247,
+    0.0086,
+    0.003,
+    0.0011,
+    0.0004,
+    0.0001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0007,
+    0.3053,
+    0.6663,
+    0.8832,
+    0.9591,
+    0.9722,
+    0.8326,
+    0.6389,
+    0.587,
+    0.7632,
+    0.8059,
+    0.7499,
+    0.6567,
+    0.6645,
+    0.6322,
+    0.6297,
+    0.6694,
+    0.6943,
+    0.6293,
+    0.4446,
+    0.2145,
+    0.0751,
+    0.0263,
+    0.0092,
+    0.0032,
+    0.0011,
+    0.0004,
+    0.0001,
+    0.0,
+    0.0398,
+    0.6451,
+    0.8758,
+    0.6811,
+    0.2384,
+    0.0834,
+    0.4003,
+    0.5946,
+    0.6715,
+    0.6612,
+    0.7512,
+    0.9065,
+    0.9618,
+    0.7159,
+    0.2506,
+    0.105,
+    0.4384,
+    0.8034,
+    0.9312,
+    0.9276,
+    0.8495,
+    0.9359,
+    0.8387,
+    0.3534,
+    0.1237,
+    0.0433,
+    0.4792,
+    0.8177,
+    0.7087,
+    0.2488,
+    0.0939,
+    0.6829,
+    0.889,
+    0.8603,
+    0.8851,
+    0.8869,
+    0.7839,
+    0.7669,
+    0.7372,
+    0.2811,
+    0.2157,
+    0.2305,
+    0.2535,
+    0.258,
+    0.2363,
+    0.6594,
+    0.8656,
+    0.9443,
+    0.7128,
+    0.2495,
+    0.122,
+    0.2775,
+    0.2874,
+    0.7506,
+    0.8738,
+    0.711,
+    0.2506,
+    0.0906,
+    0.1243,
+    0.3186,
+    0.1115,
+    0.0439,
+    0.1822,
+    0.1985,
+    0.071,
+    0.1556,
+    0.3504,
+    0.2781,
+    0.2746,
+    0.2507,
+    0.1618,
+    0.474,
+    0.5448,
+    0.4928,
+    0.3024,
+    0.3013,
+    0.3311,
+    0.2988,
+    0.4512,
+    0.6908,
+    0.7522,
+    0.778,
+    0.6161,
+    0.3972,
+    0.2999,
+    0.4802,
+    0.2857,
+    0.281,
+    0.542,
+    0.364,
+    0.2191,
+    0.7267,
+    0.9043,
+    0.9081,
+    0.667,
+    0.8185,
+    0.6751,
+    0.4797,
+    0.4012,
+    0.5027,
+    0.7908,
+    0.9268,
+    0.9407,
+    0.7402,
+    0.3413,
+    0.1375,
+    0.074,
+    0.0317,
+    0.0111,
+    0.0039,
+    0.0014,
+    0.0005,
+    0.0002,
+    0.0001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.4694,
+    0.7718,
+    0.6582,
+    0.4768,
+    0.5046,
+    0.4009,
+    0.1529,
+    0.0628,
+    0.022,
+    0.4757,
+    0.7993,
+    0.7903,
+    0.4807,
+    0.4407,
+    0.4416,
+    0.2489,
+    0.1343,
+    0.047,
+    0.3908,
+    0.6866,
+    0.6729,
+    0.4995,
+    0.1748,
+    0.315,
+    0.4818,
+    0.7913,
+    0.7938,
+    0.5191,
+    0.2698,
+    0.2216,
+    0.257,
+    0.192,
+    0.1804,
+    0.286,
+    0.3754,
+    0.2989,
+    0.1821,
+    0.0637,
+    0.2102,
+    0.3477,
+    0.5805,
+    0.6654,
+    0.6007,
+    0.3492,
+    0.1297,
+    0.0454,
+    0.0159,
+    0.0056,
+    0.0019,
+    0.0007,
+    0.0002,
+    0.0001,
+    0.0714,
+    0.3491,
+    0.7722,
+    0.7344,
+    0.7109,
+    0.3961,
+    0.3085,
+    0.2495,
+    0.1815,
+    0.2515,
+    0.3896,
+    0.4157,
+    0.3885,
+    0.1679,
+    0.2209,
+    0.3612,
+    0.2264,
+    0.186,
+    0.2717,
+    0.7451,
+    0.4688,
+    0.4279,
+    0.5607,
+    0.4803,
+    0.428,
+    0.6095,
+    0.6889,
+    0.5948,
+    0.4017,
+    0.6518,
+    0.8448,
+    0.5745,
+    0.2708,
+    0.2274,
+    0.6913,
+    0.8514,
+    0.5957,
+    0.4408,
+    0.5083,
+    0.3104,
+    0.2391,
+    0.188,
+    0.1395,
+    0.0653,
+    0.1753,
+    0.4698,
+    0.3905,
+    0.1405,
+    0.1241,
+    0.4972,
+    0.6573,
+    0.3423,
+    0.2135,
+    0.3034,
+    0.4806,
+    0.3478,
+    0.1488,
+    0.0521,
+    0.2876,
+    0.6071,
+    0.3728,
+    0.1349,
+    0.0472,
+    0.2874,
+    0.4933,
+    0.4886,
+    0.3791,
+    0.3888,
+    0.441,
+    0.3992,
+    0.368,
+    0.5353,
+    0.6733,
+    0.7842,
+    0.5157,
+    0.2796,
+    0.4238,
+    0.2757,
+    0.0965,
+    0.0338,
+    0.0904,
+    0.4632,
+    0.7529,
+    0.6174,
+    0.4182,
+    0.2889,
+    0.1468,
+    0.1759,
+    0.3973,
+    0.3359,
+    0.2115,
+    0.4057,
+    0.5229,
+    0.2806,
+    0.0982,
+    0.1606,
+    0.182,
+    0.1342,
+    0.3078,
+    0.4033,
+    0.4213,
+    0.3209,
+    0.1422,
+    0.3411,
+    0.5632,
+    0.4739,
+    0.6276,
+    0.7516,
+    0.7582,
+    0.6986,
+    0.3299,
+    0.375,
+    0.269,
+    0.3329,
+    0.4585,
+    0.4815,
+    0.4631,
+    0.4799,
+    0.6677,
+    0.6859,
+    0.5214,
+    0.2485,
+    0.1102,
+    0.0386,
+    0.0997,
+    0.5666,
+    0.7437,
+    0.7221,
+    0.5945,
+    0.3362,
+    0.1203,
+    0.5109,
+    0.6901,
+    0.3547,
+    0.2604,
+    0.1925,
+    0.216,
+    0.1473,
+    0.2961,
+    0.6864,
+    0.6737,
+    0.609,
+    0.4271,
+    0.1602,
+    0.0937,
+    0.0724,
+    0.0254,
+    0.0089,
+    0.0031,
+    0.0011,
+    0.0004,
+    0.0001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.2307,
+    0.4647,
+    0.4969,
+    0.5026,
+    0.53,
+    0.2649,
+    0.3125,
+    0.7594,
+    0.7522,
+    0.4901,
+    0.4155,
+    0.4575,
+    0.3196,
+    0.2016,
+    0.1985,
+    0.4046,
+    0.489,
+    0.3236,
+    0.2804,
+    0.1217,
+    0.0434,
+    0.2635,
+    0.6848,
+    0.7944,
+    0.5358,
+    0.204,
+    0.1959,
+    0.2335,
+    0.417,
+    0.567,
+    0.3943,
+    0.1817,
+    0.0636,
+    0.0223,
+    0.0078,
+    0.0027,
+    0.001,
+    0.0003,
+    0.0001,
+    0.3392,
+    0.7201,
+    0.5081,
+    0.1779,
+    0.0622,
+    0.2678,
+    0.5324,
+    0.831,
+    0.7841,
+    0.526,
+    0.2821,
+    0.2664,
+    0.2257,
+    0.4429,
+    0.5921,
+    0.4611,
+    0.1614,
+    0.1559,
+    0.5339,
+    0.7114,
+    0.6963,
+    0.4354,
+    0.7206,
+    0.7113,
+    0.2664,
+    0.1523,
+    0.337,
+    0.6782,
+    0.692,
+    0.5166,
+    0.3255,
+    0.1155,
+    0.1699,
+    0.2583,
+    0.672,
+    0.8852,
+    0.9598,
+    0.9859,
+    0.6273,
+    0.4992,
+    0.4862,
+    0.4423,
+    0.2427,
+    0.2431,
+    0.3819,
+    0.5548,
+    0.5257,
+    0.2589,
+    0.2737,
+    0.6347,
+    0.5276,
+    0.4497,
+    0.4062,
+    0.3245,
+    0.1175,
+    0.2344,
+    0.4396,
+    0.3596,
+    0.128,
+    0.0448,
+    0.026,
+    0.523,
+    0.5661,
+    0.5268,
+    0.4844,
+    0.2112,
+    0.2005,
+    0.3567,
+    0.3921,
+    0.5444,
+    0.5823,
+    0.5588,
+    0.6668,
+    0.7015,
+    0.7727,
+    0.8694,
+    0.6207,
+    0.5195,
+    0.4997,
+    0.4521,
+    0.2415,
+    0.4288,
+    0.5033,
+    0.3863,
+    0.3598,
+    0.2586,
+    0.2533,
+    0.2472,
+    0.2094,
+    0.5266,
+    0.5708,
+    0.5414,
+    0.4353,
+    0.2618,
+    0.4815,
+    0.7676,
+    0.8249,
+    0.8097,
+    0.7401,
+    0.5845,
+    0.4403,
+    0.2966,
+    0.2165,
+    0.1233,
+    0.0484,
+    0.0169,
+    0.0059,
+    0.0021,
+    0.0007,
+    0.0003,
+    0.0001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1291,
+    0.5768,
+    0.78,
+    0.7275,
+    0.344,
+    0.1577,
+    0.2722,
+    0.3452,
+    0.362,
+    0.42,
+    0.3461,
+    0.3157,
+    0.3351,
+    0.2836,
+    0.5517,
+    0.8431,
+    0.8327,
+    0.5722,
+    0.2846,
+    0.4235,
+    0.2555,
+    0.0894,
+    0.3121,
+    0.522,
+    0.4423,
+    0.4634,
+    0.4026,
+    0.4303,
+    0.5785,
+    0.3743,
+    0.2454,
+    0.63,
+    0.7276,
+    0.5729,
+    0.3868,
+    0.1723,
+    0.231,
+    0.1743,
+    0.061,
+    0.1867,
+    0.432,
+    0.4811,
+    0.4082,
+    0.3203,
+    0.3301,
+    0.2693,
+    0.3961,
+    0.2977,
+    0.1042,
+    0.0365,
+    0.2834,
+    0.3987,
+    0.3611,
+    0.3892,
+    0.4217,
+    0.4675,
+    0.4685,
+    0.3261,
+    0.2113,
+    0.2415,
+    0.2801,
+    0.2028,
+    0.2058,
+    0.276,
+    0.1938,
+    0.1772,
+    0.1466,
+    0.3274,
+    0.1838,
+    0.0867,
+    0.1668,
+    0.3953,
+    0.442,
+    0.3761,
+    0.445,
+    0.6236,
+    0.4892,
+    0.1836,
+    0.0725,
+    0.0266,
+    0.2631,
+    0.4867,
+    0.4436,
+    0.48,
+    0.4252,
+    0.5496,
+    0.2411,
+    0.0844,
+    0.0295,
+    0.0103,
+    0.0036,
+    0.0013,
+    0.0004,
+    0.0002,
+    0.0001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "chunks": [
+    {
+      "speaker": "N",
+      "start": 0.1763,
+      "end": 0.7897,
+      "text": "Eu só queria",
+      "words": [
+        {
+          "word": "Eu",
+          "start": 0.1763,
+          "end": 0.3383
+        },
+        {
+          "word": "só",
+          "start": 0.3499,
+          "end": 0.5467
+        },
+        {
+          "word": "queria",
+          "start": 0.5583,
+          "end": 0.7897
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 0.8013,
+      "end": 1.5652,
+      "text": "um dia normal",
+      "words": [
+        {
+          "word": "um",
+          "start": 0.8013,
+          "end": 0.8823
+        },
+        {
+          "word": "dia",
+          "start": 0.8939,
+          "end": 1.079
+        },
+        {
+          "word": "normal",
+          "start": 1.0907,
+          "end": 1.5652
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 1.8198,
+      "end": 2.468,
+      "text": "até meu robô",
+      "words": [
+        {
+          "word": "até",
+          "start": 1.8198,
+          "end": 2.0282
+        },
+        {
+          "word": "meu",
+          "start": 2.0397,
+          "end": 2.1786
+        },
+        {
+          "word": "robô",
+          "start": 2.1902,
+          "end": 2.468
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 2.4795,
+      "end": 3.4402,
+      "text": "decidiu fazer café",
+      "words": [
+        {
+          "word": "decidiu",
+          "start": 2.4795,
+          "end": 2.8152
+        },
+        {
+          "word": "fazer",
+          "start": 2.8268,
+          "end": 3.1277
+        },
+        {
+          "word": "café",
+          "start": 3.1393,
+          "end": 3.4402
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 3.4518,
+      "end": 4.1115,
+      "text": "no modo turbo",
+      "words": [
+        {
+          "word": "no",
+          "start": 3.4518,
+          "end": 3.5327
+        },
+        {
+          "word": "modo",
+          "start": 3.5443,
+          "end": 3.8568
+        },
+        {
+          "word": "turbo",
+          "start": 3.8684,
+          "end": 4.1115
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 4.123,
+      "end": 4.9332,
+      "text": "aparecer na minha",
+      "words": [
+        {
+          "word": "aparecer",
+          "start": 4.123,
+          "end": 4.6092
+        },
+        {
+          "word": "na",
+          "start": 4.6208,
+          "end": 4.7133
+        },
+        {
+          "word": "minha",
+          "start": 4.7249,
+          "end": 4.9332
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 4.9448,
+      "end": 5.3036,
+      "text": "sala",
+      "words": [
+        {
+          "word": "sala",
+          "start": 4.9448,
+          "end": 5.3036
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "start": 6.343,
+      "end": 7.4695,
+      "text": "Calma Leo Eu",
+      "words": [
+        {
+          "word": "Calma",
+          "start": 6.343,
+          "end": 6.7229
+        },
+        {
+          "word": "Leo",
+          "start": 6.7474,
+          "end": 7.0905
+        },
+        {
+          "word": "Eu",
+          "start": 7.347,
+          "end": 7.4695
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "start": 7.4817,
+      "end": 8.119,
+      "text": "tenho um plano",
+      "words": [
+        {
+          "word": "tenho",
+          "start": 7.4817,
+          "end": 7.6901
+        },
+        {
+          "word": "um",
+          "start": 7.7023,
+          "end": 7.7881
+        },
+        {
+          "word": "plano",
+          "start": 7.8004,
+          "end": 8.119
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "start": 8.1313,
+      "end": 9.565,
+      "text": "totalmente científico e",
+      "words": [
+        {
+          "word": "totalmente",
+          "start": 8.1313,
+          "end": 8.7072
+        },
+        {
+          "word": "científico",
+          "start": 8.7195,
+          "end": 9.4793
+        },
+        {
+          "word": "e",
+          "start": 9.516,
+          "end": 9.565
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "start": 9.5773,
+      "end": 10.3004,
+      "text": "sem chance de",
+      "words": [
+        {
+          "word": "sem",
+          "start": 9.5773,
+          "end": 9.7979
+        },
+        {
+          "word": "chance",
+          "start": 9.8102,
+          "end": 10.1901
+        },
+        {
+          "word": "de",
+          "start": 10.2023,
+          "end": 10.3004
+        }
+      ]
+    },
+    {
+      "speaker": "C",
+      "start": 10.3126,
+      "end": 10.9376,
+      "text": "dar errado",
+      "words": [
+        {
+          "word": "dar",
+          "start": 10.3126,
+          "end": 10.472
+        },
+        {
+          "word": "errado",
+          "start": 10.4842,
+          "end": 10.9376
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 12.0243,
+      "end": 12.7882,
+      "text": "Quando fomos para",
+      "words": [
+        {
+          "word": "Quando",
+          "start": 12.0243,
+          "end": 12.2905
+        },
+        {
+          "word": "fomos",
+          "start": 12.3021,
+          "end": 12.6377
+        },
+        {
+          "word": "para",
+          "start": 12.6493,
+          "end": 12.7882
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 12.7998,
+      "end": 13.5984,
+      "text": "a praça central",
+      "words": [
+        {
+          "word": "a",
+          "start": 12.7998,
+          "end": 12.8398
+        },
+        {
+          "word": "praça",
+          "start": 12.8345,
+          "end": 13.1238
+        },
+        {
+          "word": "central",
+          "start": 13.1354,
+          "end": 13.5984
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 13.8414,
+      "end": 14.6169,
+      "text": "o assunto sobre",
+      "words": [
+        {
+          "word": "o",
+          "start": 13.8414,
+          "end": 13.9109
+        },
+        {
+          "word": "assunto",
+          "start": 13.9225,
+          "end": 14.3738
+        },
+        {
+          "word": "sobre",
+          "start": 14.3854,
+          "end": 14.6169
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 14.6285,
+      "end": 15.3808,
+      "text": "meu robô decidiu",
+      "words": [
+        {
+          "word": "meu",
+          "start": 14.6285,
+          "end": 14.7442
+        },
+        {
+          "word": "robô",
+          "start": 14.7558,
+          "end": 15.0336
+        },
+        {
+          "word": "decidiu",
+          "start": 15.0451,
+          "end": 15.3808
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 15.3923,
+      "end": 16.1215,
+      "text": "fazer café no",
+      "words": [
+        {
+          "word": "fazer",
+          "start": 15.3923,
+          "end": 15.7048
+        },
+        {
+          "word": "café",
+          "start": 15.7164,
+          "end": 16.0289
+        },
+        {
+          "word": "no",
+          "start": 16.0405,
+          "end": 16.1215
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 16.1331,
+      "end": 16.9317,
+      "text": "modo turbo já",
+      "words": [
+        {
+          "word": "modo",
+          "start": 16.1331,
+          "end": 16.4456
+        },
+        {
+          "word": "turbo",
+          "start": 16.4572,
+          "end": 16.7928
+        },
+        {
+          "word": "já",
+          "start": 16.8044,
+          "end": 16.9317
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 16.9433,
+      "end": 17.5798,
+      "text": "tinha virado o",
+      "words": [
+        {
+          "word": "tinha",
+          "start": 16.9433,
+          "end": 17.2095
+        },
+        {
+          "word": "virado",
+          "start": 17.221,
+          "end": 17.5451
+        },
+        {
+          "word": "o",
+          "start": 17.5567,
+          "end": 17.5967
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 17.5798,
+      "end": 18.2627,
+      "text": "maior caos da",
+      "words": [
+        {
+          "word": "maior",
+          "start": 17.5798,
+          "end": 17.9039
+        },
+        {
+          "word": "caos",
+          "start": 17.9155,
+          "end": 18.1585
+        },
+        {
+          "word": "da",
+          "start": 18.1701,
+          "end": 18.2627
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 18.2743,
+      "end": 18.7372,
+      "text": "cidade",
+      "words": [
+        {
+          "word": "cidade",
+          "start": 18.2743,
+          "end": 18.7372
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 19.7723,
+      "end": 20.3278,
+      "text": "Em vez de",
+      "words": [
+        {
+          "word": "Em",
+          "start": 19.7723,
+          "end": 19.9575
+        },
+        {
+          "word": "vez",
+          "start": 19.969,
+          "end": 20.2352
+        },
+        {
+          "word": "de",
+          "start": 20.2468,
+          "end": 20.3278
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 20.3394,
+      "end": 21.52,
+      "text": "explodir a praça",
+      "words": [
+        {
+          "word": "explodir",
+          "start": 20.3394,
+          "end": 20.8602
+        },
+        {
+          "word": "a",
+          "start": 21.1149,
+          "end": 21.1959
+        },
+        {
+          "word": "praça",
+          "start": 21.2075,
+          "end": 21.52
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 21.5315,
+      "end": 22.3818,
+      "text": "inteira aplaudiu e",
+      "words": [
+        {
+          "word": "inteira",
+          "start": 21.5315,
+          "end": 21.8556
+        },
+        {
+          "word": "aplaudiu",
+          "start": 21.8672,
+          "end": 22.3302
+        },
+        {
+          "word": "e",
+          "start": 22.3418,
+          "end": 22.3818
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 22.388,
+      "end": 22.8857,
+      "text": "me entregou um",
+      "words": [
+        {
+          "word": "me",
+          "start": 22.388,
+          "end": 22.4343
+        },
+        {
+          "word": "entregou",
+          "start": 22.4459,
+          "end": 22.7931
+        },
+        {
+          "word": "um",
+          "start": 22.8047,
+          "end": 22.8857
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 22.8973,
+      "end": 23.6728,
+      "text": "troféu de maior",
+      "words": [
+        {
+          "word": "troféu",
+          "start": 22.8973,
+          "end": 23.2677
+        },
+        {
+          "word": "de",
+          "start": 23.2793,
+          "end": 23.3487
+        },
+        {
+          "word": "maior",
+          "start": 23.3603,
+          "end": 23.6728
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 23.6843,
+      "end": 24.6102,
+      "text": "invenção do ano",
+      "words": [
+        {
+          "word": "invenção",
+          "start": 23.6843,
+          "end": 24.182
+        },
+        {
+          "word": "do",
+          "start": 24.1936,
+          "end": 24.3325
+        },
+        {
+          "word": "ano",
+          "start": 24.344,
+          "end": 24.6102
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 25.6483,
+      "end": 26.528,
+      "text": "Alguém sabe como",
+      "words": [
+        {
+          "word": "Alguém",
+          "start": 25.6483,
+          "end": 26.0187
+        },
+        {
+          "word": "sabe",
+          "start": 26.0303,
+          "end": 26.3428
+        },
+        {
+          "word": "como",
+          "start": 26.3543,
+          "end": 26.528
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 26.5395,
+      "end": 27.3613,
+      "text": "mudar de planeta",
+      "words": [
+        {
+          "word": "mudar",
+          "start": 26.5395,
+          "end": 26.8173
+        },
+        {
+          "word": "de",
+          "start": 26.8288,
+          "end": 26.9098
+        },
+        {
+          "word": "planeta",
+          "start": 26.9215,
+          "end": 27.3613
+        }
+      ]
+    },
+    {
+      "speaker": "N",
+      "start": 27.3728,
+      "end": 28.5997,
+      "text": "antes de segunda-feira",
+      "words": [
+        {
+          "word": "antes",
+          "start": 27.3728,
+          "end": 27.7085
+        },
+        {
+          "word": "de",
+          "start": 27.72,
+          "end": 27.801
+        },
+        {
+          "word": "segunda-feira",
+          "start": 27.8127,
+          "end": 28.5997
+        }
+      ]
+    }
+  ]
+}

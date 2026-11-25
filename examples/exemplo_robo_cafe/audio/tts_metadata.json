@@ -1,0 +1,676 @@
+{
+  "vo_wav": "examples\\exemplo_robo_cafe\\audio\\vo.wav",
+  "sample_rate": 44100,
+  "duration_sec": 29.4161,
+  "providers_used": [
+    "edge_tts"
+  ],
+  "fallback_warnings": [],
+  "segments": [
+    {
+      "index": 0,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Eu só queria um dia normal, até meu robô decidiu fazer café no modo turbo aparecer na minha sala.",
+      "audio_path": "examples\\exemplo_robo_cafe\\audio\\lines\\line_000_N_pcm.wav",
+      "start": 0.08,
+      "end": 6.104,
+      "duration_sec": 6.024,
+      "provider": "edge_tts",
+      "voice_id": "pt-BR-AntonioNeural",
+      "word_boundaries": [
+        {
+          "word": "Eu",
+          "start": 0.1763,
+          "end": 0.3383,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "só",
+          "start": 0.3499,
+          "end": 0.5467,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "queria",
+          "start": 0.5583,
+          "end": 0.7897,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "um",
+          "start": 0.8013,
+          "end": 0.8823,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "dia",
+          "start": 0.8939,
+          "end": 1.079,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "normal",
+          "start": 1.0907,
+          "end": 1.5652,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "até",
+          "start": 1.8198,
+          "end": 2.0282,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "meu",
+          "start": 2.0397,
+          "end": 2.1786,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "robô",
+          "start": 2.1902,
+          "end": 2.468,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "decidiu",
+          "start": 2.4795,
+          "end": 2.8152,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "fazer",
+          "start": 2.8268,
+          "end": 3.1277,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "café",
+          "start": 3.1393,
+          "end": 3.4402,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "no",
+          "start": 3.4518,
+          "end": 3.5327,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "modo",
+          "start": 3.5443,
+          "end": 3.8568,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "turbo",
+          "start": 3.8684,
+          "end": 4.1115,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "aparecer",
+          "start": 4.123,
+          "end": 4.6092,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "na",
+          "start": 4.6208,
+          "end": 4.7133,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "minha",
+          "start": 4.7249,
+          "end": 4.9332,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "sala",
+          "start": 4.9448,
+          "end": 5.3036,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "speaker": "C",
+      "character_id": "costar",
+      "text": "Calma, Leo. Eu tenho um plano totalmente científico e sem chance de dar errado.",
+      "audio_path": "examples\\exemplo_robo_cafe\\audio\\lines\\line_001_C_pcm.wav",
+      "start": 6.244,
+      "end": 11.788,
+      "duration_sec": 5.544,
+      "provider": "edge_tts",
+      "voice_id": "pt-BR-FranciscaNeural",
+      "word_boundaries": [
+        {
+          "word": "Calma",
+          "start": 6.343,
+          "end": 6.7229,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "Leo",
+          "start": 6.7474,
+          "end": 7.0905,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "Eu",
+          "start": 7.347,
+          "end": 7.4695,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "tenho",
+          "start": 7.4817,
+          "end": 7.6901,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "um",
+          "start": 7.7023,
+          "end": 7.7881,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "plano",
+          "start": 7.8004,
+          "end": 8.119,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "totalmente",
+          "start": 8.1313,
+          "end": 8.7072,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "científico",
+          "start": 8.7195,
+          "end": 9.4793,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "e",
+          "start": 9.516,
+          "end": 9.565,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "sem",
+          "start": 9.5773,
+          "end": 9.7979,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "chance",
+          "start": 9.8102,
+          "end": 10.1901,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "de",
+          "start": 10.2023,
+          "end": 10.3004,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "dar",
+          "start": 10.3126,
+          "end": 10.472,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "errado",
+          "start": 10.4842,
+          "end": 10.9376,
+          "speaker": "C",
+          "source": "edge_tts_word_boundary"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade.",
+      "audio_path": "examples\\exemplo_robo_cafe\\audio\\lines\\line_002_N_pcm.wav",
+      "start": 11.928,
+      "end": 19.536,
+      "duration_sec": 7.608,
+      "provider": "edge_tts",
+      "voice_id": "pt-BR-AntonioNeural",
+      "word_boundaries": [
+        {
+          "word": "Quando",
+          "start": 12.0243,
+          "end": 12.2905,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "fomos",
+          "start": 12.3021,
+          "end": 12.6377,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "para",
+          "start": 12.6493,
+          "end": 12.7882,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "a",
+          "start": 12.7998,
+          "end": 12.8398,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "praça",
+          "start": 12.8345,
+          "end": 13.1238,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "central",
+          "start": 13.1354,
+          "end": 13.5984,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "o",
+          "start": 13.8414,
+          "end": 13.9109,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "assunto",
+          "start": 13.9225,
+          "end": 14.3738,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "sobre",
+          "start": 14.3854,
+          "end": 14.6169,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "meu",
+          "start": 14.6285,
+          "end": 14.7442,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "robô",
+          "start": 14.7558,
+          "end": 15.0336,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "decidiu",
+          "start": 15.0451,
+          "end": 15.3808,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "fazer",
+          "start": 15.3923,
+          "end": 15.7048,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "café",
+          "start": 15.7164,
+          "end": 16.0289,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "no",
+          "start": 16.0405,
+          "end": 16.1215,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "modo",
+          "start": 16.1331,
+          "end": 16.4456,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "turbo",
+          "start": 16.4572,
+          "end": 16.7928,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "já",
+          "start": 16.8044,
+          "end": 16.9317,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "tinha",
+          "start": 16.9433,
+          "end": 17.2095,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "virado",
+          "start": 17.221,
+          "end": 17.5451,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "o",
+          "start": 17.5567,
+          "end": 17.5967,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "maior",
+          "start": 17.5798,
+          "end": 17.9039,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "caos",
+          "start": 17.9155,
+          "end": 18.1585,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "da",
+          "start": 18.1701,
+          "end": 18.2627,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "cidade",
+          "start": 18.2743,
+          "end": 18.7372,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Em vez de explodir, a praça inteira aplaudiu e me entregou um troféu de maior invenção do ano.",
+      "audio_path": "examples\\exemplo_robo_cafe\\audio\\lines\\line_003_N_pcm.wav",
+      "start": 19.676,
+      "end": 25.412,
+      "duration_sec": 5.736,
+      "provider": "edge_tts",
+      "voice_id": "pt-BR-AntonioNeural",
+      "word_boundaries": [
+        {
+          "word": "Em",
+          "start": 19.7723,
+          "end": 19.9575,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "vez",
+          "start": 19.969,
+          "end": 20.2352,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "de",
+          "start": 20.2468,
+          "end": 20.3278,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "explodir",
+          "start": 20.3394,
+          "end": 20.8602,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "a",
+          "start": 21.1149,
+          "end": 21.1959,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "praça",
+          "start": 21.2075,
+          "end": 21.52,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "inteira",
+          "start": 21.5315,
+          "end": 21.8556,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "aplaudiu",
+          "start": 21.8672,
+          "end": 22.3302,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "e",
+          "start": 22.3418,
+          "end": 22.3818,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "me",
+          "start": 22.388,
+          "end": 22.4343,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "entregou",
+          "start": 22.4459,
+          "end": 22.7931,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "um",
+          "start": 22.8047,
+          "end": 22.8857,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "troféu",
+          "start": 22.8973,
+          "end": 23.2677,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "de",
+          "start": 23.2793,
+          "end": 23.3487,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "maior",
+          "start": 23.3603,
+          "end": 23.6728,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "invenção",
+          "start": 23.6843,
+          "end": 24.182,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "do",
+          "start": 24.1936,
+          "end": 24.3325,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "ano",
+          "start": 24.344,
+          "end": 24.6102,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Alguém sabe como mudar de planeta antes de segunda-feira?",
+      "audio_path": "examples\\exemplo_robo_cafe\\audio\\lines\\line_004_N_pcm.wav",
+      "start": 25.552,
+      "end": 29.4161,
+      "duration_sec": 3.864,
+      "provider": "edge_tts",
+      "voice_id": "pt-BR-AntonioNeural",
+      "word_boundaries": [
+        {
+          "word": "Alguém",
+          "start": 25.6483,
+          "end": 26.0187,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "sabe",
+          "start": 26.0303,
+          "end": 26.3428,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "como",
+          "start": 26.3543,
+          "end": 26.528,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "mudar",
+          "start": 26.5395,
+          "end": 26.8173,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "de",
+          "start": 26.8288,
+          "end": 26.9098,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "planeta",
+          "start": 26.9215,
+          "end": 27.3613,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "antes",
+          "start": 27.3728,
+          "end": 27.7085,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "de",
+          "start": 27.72,
+          "end": 27.801,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        },
+        {
+          "word": "segunda-feira",
+          "start": 27.8127,
+          "end": 28.5997,
+          "speaker": "N",
+          "source": "edge_tts_word_boundary"
+        }
+      ]
+    }
+  ]
+}

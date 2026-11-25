@@ -1,0 +1,125 @@
+{
+  "title": "O Dia em que Meu robô decidiu fazer café no modo turbo Saiu do Controle",
+  "theme": "meu robô decidiu fazer café no modo turbo",
+  "premise": "Leo precisa sobreviver ao caos causado por meu robô decidiu fazer café no modo turbo com a ajuda duvidosa de Bip.",
+  "language": "pt-BR",
+  "provider_used": "local_template_ptbr",
+  "target_duration_sec": 14.0,
+  "word_count": 85,
+  "characters": [
+    {
+      "id": "narrator",
+      "speaker_code": "N",
+      "name": "Leo",
+      "role": "protagonista",
+      "rig": "human",
+      "skin": "#FFCCA4",
+      "shirt": "#3B7BFF",
+      "pants": "#2A314A",
+      "shoe": "#EEF2FA",
+      "hairColor": "#231D28",
+      "hairStyle": "messy",
+      "voice_role": "narrator"
+    },
+    {
+      "id": "costar",
+      "speaker_code": "C",
+      "name": "Bip",
+      "role": "co-protagonista",
+      "rig": "bot",
+      "bodyColor": "#E5EEF8",
+      "accentColor": "#35D4FF",
+      "description": "Um robô assistente super literal e cheio de confiança duvidosa.",
+      "voice_role": "costar"
+    }
+  ],
+  "lines": [
+    {
+      "index": 0,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Eu só queria um dia normal, até meu robô decidiu fazer café no modo turbo aparecer na minha sala.",
+      "beat_type": "hook",
+      "set": "living_room",
+      "emotion": "shock",
+      "action": "shock",
+      "prop": "coffee_mug",
+      "sfx": "bass_hit",
+      "impact_text": "COMO ASSIM?!"
+    },
+    {
+      "index": 1,
+      "speaker": "C",
+      "character_id": "costar",
+      "text": "Calma, Leo. Eu tenho um plano totalmente científico e sem chance de dar errado.",
+      "beat_type": "setup",
+      "set": "living_room",
+      "emotion": "smug",
+      "action": "explain",
+      "prop": "scroll",
+      "sfx": "pop",
+      "impact_text": null
+    },
+    {
+      "index": 2,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade.",
+      "beat_type": "escalation",
+      "set": "town_square",
+      "emotion": "panic",
+      "action": "run",
+      "prop": null,
+      "sfx": "footsteps",
+      "impact_text": "CAOS TOTAL!"
+    },
+    {
+      "index": 3,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Em vez de explodir, a praça inteira aplaudiu e me entregou um troféu de maior invenção do ano.",
+      "beat_type": "climax",
+      "set": "town_square_golden",
+      "emotion": "happy",
+      "action": "celebrate",
+      "prop": "trophy",
+      "sfx": "bell",
+      "impact_text": "VITÓRIA!"
+    },
+    {
+      "index": 4,
+      "speaker": "N",
+      "character_id": "narrator",
+      "text": "Alguém sabe como mudar de planeta antes de segunda-feira?",
+      "beat_type": "twist",
+      "set": "living_room_night",
+      "emotion": "deadpan",
+      "action": "defeat",
+      "prop": null,
+      "sfx": "trombone",
+      "impact_text": null
+    }
+  ],
+  "script_pairs": [
+    [
+      "N",
+      "Eu só queria um dia normal, até meu robô decidiu fazer café no modo turbo aparecer na minha sala."
+    ],
+    [
+      "C",
+      "Calma, Leo. Eu tenho um plano totalmente científico e sem chance de dar errado."
+    ],
+    [
+      "N",
+      "Quando fomos para a praça central, o assunto sobre meu robô decidiu fazer café no modo turbo já tinha virado o maior caos da cidade."
+    ],
+    [
+      "N",
+      "Em vez de explodir, a praça inteira aplaudiu e me entregou um troféu de maior invenção do ano."
+    ],
+    [
+      "N",
+      "Alguém sabe como mudar de planeta antes de segunda-feira?"
+    ]
+  ]
+}
